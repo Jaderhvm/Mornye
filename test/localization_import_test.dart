@@ -45,6 +45,15 @@ void main() {
     },
   );
 
+  test('duplicate warnings keep only the two count arguments', () async {
+    for (final locale in filteredSupportedLocales) {
+      final strings = await AppLocalizations.delegate.load(locale);
+      final message = strings.duplicatesKeepBestAllMessage(19, 7);
+      expect(message, contains('19'), reason: locale.toString());
+      expect(message, contains('7'), reason: locale.toString());
+    }
+  });
+
   for (final (locale, title) in [
     (const Locale('vi'), 'Cài đặt'),
     (const Locale('zh', 'CN'), '设置'),
