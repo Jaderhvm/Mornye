@@ -1,4 +1,179 @@
 {
+  "trackBpm": "BPM",
+  "trackMood": "Mood",
+  "subsonicAddToLibrary": "Add server to Library",
+  "subsonicLibraryAdded": "Server added to Library",
+  "subsonicLibraryDescription": "Sync the server catalogue and artwork to Library. Music stays on your server. Rescan it in Local Library settings to update the catalogue.",
+  "subsonicAuthentication": "Authentication",
+  "subsonicToken": "Salted token",
+  "subsonicPasswordAuth": "Password",
+  "subsonicApiKey": "API key",
+  "subsonicUsername": "Username",
+  "subsonicPassword": "Password",
+  "subsonicSearch": "Search server music...",
+  "subsonicMoreAlbums": "More albums",
+  "subsonicErrorApi": "The server does not support this API version or authentication method. Check the server settings and the selected sign-in method.",
+  "networkDownloadDestination": "네트워크 다운로드 대상",
+  "@networkDownloadDestination": {
+    "description": "Files settings item that opens network storage to choose a folder for downloaded music"
+  },
+  "networkUseForDownloads": "이 폴더에 다운로드",
+  "@networkUseForDownloads": {
+    "description": "Action to select the current network folder as the download destination; also the settings subtitle when no network destination is selected"
+  },
+  "networkDownloadSelected": "선택된 다운로드 대상",
+  "@networkDownloadSelected": {
+    "description": "Status label replacing the download destination action when the current network folder is already selected"
+  },
+  "networkUseLocalDownloads": "로컬 다운로드 폴더 사용",
+  "@networkUseLocalDownloads": {
+    "description": "Files settings action that clears the network download destination and returns downloads to the local folder"
+  },
+  "networkDownloadAccessFailed": "이 폴더에 쓸 수 없습니다",
+  "@networkDownloadAccessFailed": {
+    "description": "Snackbar prefix when the write-access check fails while selecting a network download folder; followed by a specific network error message"
+  },
+  "networkUploading": "네트워크 저장소에 업로드 중",
+  "@networkUploading": {
+    "description": "Download queue status during upload of prepared audio to the network destination; a progress percentage may follow"
+  },
+  "networkDownloadDescription": "이 기기에서 음악을 준비한 다음 NAS에 업로드하세요. 업로드가 완료될 때까지 앱을 열어 둔 상태로 유지하세요. 다시 시도하면 준비된 오디오를 다시 사용합니다. 기존 파일은 그대로 유지되며, 같은 이름으로 새로 다운로드한 파일에는 번호가 붙은 접미사가 추가됩니다.",
+  "@networkDownloadDescription": {
+    "description": "Help below the network download destination action explaining local preparation, upload, retry behavior, and preservation of existing files; NAS means network-attached storage"
+  },
+  "networkAddToLibrary": "라이브러리에 폴더 추가",
+  "@networkAddToLibrary": {
+    "description": "Action that adds the current network folder as a Library source and starts scanning it"
+  },
+  "networkLibraryAdded": "라이브러리에 폴더가 추가됨",
+  "@networkLibraryAdded": {
+    "description": "Status label replacing the add-to-Library action after the network folder has been added as a source; does not mean scanning has finished"
+  },
+  "networkLibraryDescription": "이 폴더와 그 하위 폴더를 검색합니다. 음악 파일은 서버에 저장되고, 메타데이터와 앨범 아트워크는 이 기기에 저장됩니다. 로컬 라이브러리 설정에서 관리하거나 다시 검색할 수 있습니다",
+  "@networkLibraryDescription": {
+    "description": "Help below the add-to-Library action explaining recursive scanning, local metadata and artwork storage, and management in Local Library settings"
+  },
+  "networkStorage": "네트워크 저장소",
+  "@networkStorage": {
+    "description": "Title and navigation label for the screen used to manage network connections and browse remote music folders"
+  },
+  "networkErrorUnreachable": "서버에 연결할 수 없습니다. 이 휴대폰에서 해당 네트워크에 접속할 수 있는지, 그리고 파일 공유 서비스가 실행 중인지 확인하세요. SMB의 경우 포트 445에 연결할 수 있어야 합니다",
+  "@networkErrorUnreachable": {
+    "description": "Network access error for an unreachable server, with connection troubleshooting and the SMB port requirement"
+  },
+  "networkErrorTimeout": "서버가 제때 응답하지 않았습니다. 연결 상태를 확인한 후 다시 시도하세요",
+  "@networkErrorTimeout": {
+    "description": "Network access error when a server operation exceeds its time limit"
+  },
+  "networkErrorAuthentication": "서버에서 로그인을 거부했습니다. 사용자 이름, 비밀번호 및 도메인을 확인하세요. 서버에서 도메인을 요구하지 않는 한 도메인 입력란은 비워 두세요",
+  "@networkErrorAuthentication": {
+    "description": "Network access error when the server rejects credentials; domain refers to the optional SMB authentication domain"
+  },
+  "networkErrorPermission": "이 계정에는 해당 공유 폴더 또는 폴더를 열 수 있는 권한이 없습니다. 서버에서 해당 계정의 읽기 권한을 확인하세요",
+  "@networkErrorPermission": {
+    "description": "Network access error when the server denies account permissions for a shared folder; distinct from the device's local network permission"
+  },
+  "networkErrorLocalPermission": "Local network access is not allowed. Allow Nearby devices for Mornye in Android app settings, then try again.",
+  "@networkErrorLocalPermission": {
+    "description": "Network access error when Android denies local network permission; Nearby devices is the Android app permission setting"
+  },
+  "networkErrorShare": "공유 폴더 또는 폴더를 찾을 수 없습니다. SMB의 경우 서버 주소 뒤에 서버의 공유 폴더 이름을 입력하세요 (예시: smb://server/Music/)",
+  "@networkErrorShare": {
+    "description": "Network access error for a missing share or folder; share means an SMB shared folder and the example illustrates its URL path"
+  },
+  "networkErrorProtocol": "서버와 이 SMB 클라이언트가 지원되는 프로토콜에 합의하지 못하였습니다. 서버에서 SMB2 또는 SMB3를 활성화하세요. SMB1은 지원되지 않습니다",
+  "@networkErrorProtocol": {
+    "description": "Network access error for incompatible SMB protocol versions; preserve the version names SMB1, SMB2, and SMB3"
+  },
+  "networkErrorAddress": "서버 주소를 확인하세요. SMB의 경우 smb://server/share/ 형식을 사용하고, WebDAV 및 HTTP의 경우 http:// 또는 https:// 주소를 사용하세요.",
+  "@networkErrorAddress": {
+    "description": "Network access error for an invalid address, with URL scheme examples for SMB, WebDAV, and HTTP connections"
+  },
+  "networkConnections": "저장된 연결",
+  "@networkConnections": {
+    "description": "Section heading above the list of saved network storage connections"
+  },
+  "networkServer": "서버",
+  "@networkServer": {
+    "description": "Connection form section heading above the display name and server or audio URL fields"
+  },
+  "networkCredentials": "로그인 (선택 사항)",
+  "@networkCredentials": {
+    "description": "Connection form section heading for optional server credentials"
+  },
+  "networkRefresh": "새로고침",
+  "@networkRefresh": {
+    "description": "Toolbar tooltip for reloading saved connections or the current network folder listing"
+  },
+  "networkStorageDescription": "NAS 또는 음악 서버에 연결하여 폴더를 탐색하세요. 로그인 정보는 이 기기에 안전하게 저장됩니다",
+  "@networkStorageDescription": {
+    "description": "Introduction shown in the empty connections screen and connection form, explaining remote folder browsing and secure local credential storage; NAS means network-attached storage"
+  },
+  "networkAddConnection": "연결 추가",
+  "@networkAddConnection": {
+    "description": "Action label, toolbar tooltip, and form title for adding a network storage connection"
+  },
+  "networkEditConnection": "연결 편집",
+  "@networkEditConnection": {
+    "description": "Edit button tooltip and form title for changing an existing network storage connection"
+  },
+  "networkConnectionName": "이름",
+  "@networkConnectionName": {
+    "description": "Required connection form field for a user-chosen display name identifying the saved connection"
+  },
+  "networkAddress": "서버 또는 오디오 URL",
+  "@networkAddress": {
+    "description": "Required connection form field for the server or direct audio URL, using the scheme appropriate to the selected protocol"
+  },
+  "networkProtocol": "프로토콜",
+  "@networkProtocol": {
+    "description": "Connection form section heading for choosing SMB, WebDAV, or HTTP / HTTPS"
+  },
+  "networkUsername": "사용자 이름 (선택 사항)",
+  "@networkUsername": {
+    "description": "Optional connection form field for the server account username"
+  },
+  "networkPassword": "비밀번호 (선택 사항)",
+  "@networkPassword": {
+    "description": "Optional connection form field for the server account password, with input characters hidden"
+  },
+  "networkDomain": "도메인 (선택 사항)",
+  "@networkDomain": {
+    "description": "Optional connection form field shown only for SMB; refers to the authentication domain, not the server's internet domain name"
+  },
+  "networkConnectSave": "연결 및 저장",
+  "@networkConnectSave": {
+    "description": "Connection form action that checks access to the network source before saving the connection"
+  },
+  "networkErrorCertificate": "서버의 HTTPS 인증서를 확인할 수 없습니다. 이 연결을 편집하여 인증서를 검토하고 신뢰하도록 설정하거나, 서버의 HTTPS 구성을 확인하세요",
+  "@networkErrorCertificate": {
+    "description": "Network access error for HTTPS certificate verification failure, directing the user to review the certificate in the connection form; unrelated to SMB authentication"
+  },
+  "networkCertificatePrompt": "이 서버는 신뢰할 수 없는 HTTPS 인증서를 사용하고 있습니다. 라우터와 NAS 장치는 자체 서명된 인증서를 사용하는 경우가 많습니다. 신뢰하기 전에 서버 주소와 SHA-256 지문을 확인하세요. 인증서 신뢰 설정은 이 서버의 해당 인증서에만 적용되며, 인증서가 변경되면 다시 승인이 필요합니다",
+  "@networkCertificatePrompt": {
+    "description": "Connection form warning shown above the HTTPS origin and certificate SHA-256 fingerprint; approval trusts only that fingerprint for this connection's HTTPS origin, not a global certificate authority or an SMB server"
+  },
+  "networkTrustCertificate": "인증서를 신뢰하고 다시 시도",
+  "@networkTrustCertificate": {
+    "description": "Action approving the displayed certificate SHA-256 fingerprint for this connection's HTTPS origin and retrying connect-and-save; does not grant global certificate trust"
+  },
+  "networkRemoveConnection": "연결 제거",
+  "@networkRemoveConnection": {
+    "description": "Connection form action that removes the saved connection and its credentials, without deleting files on the server"
+  },
+  "networkNoFiles": "지원되는 음악 파일이나 폴더를 찾을 수 없습니다",
+  "@networkNoFiles": {
+    "description": "Empty folder message when the network listing contains no directories or supported audio files"
+  },
+  "networkConnectionError": "네트워크 소스에 접근할 수 없습니다. 서버 주소, 로그인 정보 및 연결 상태를 확인한 후 다시 시도하세요",
+  "@networkConnectionError": {
+    "description": "Fallback network access error when the failure has no more specific classification"
+  },
+  "extensionAccountTitle": "확장 계정",
+  "extensionAccountInvalidForm": "확장 기능에서 잘못된 계정 양식을 반환했습니다",
+  "extensionAccountRestartLogin": "계속하려면 계정 로그인을 다시 시작하세요",
+  "extensionAccountRequiredValue": "값을 입력하세요",
+  "extensionAccountInvalidNumber": "유효한 숫자를 입력하세요",
   "settingsPlaybackSubtitle": "플레이어, 볼륨, AutoMix, 및 오디오 출력",
   "sectionPlayer": "플레이어",
   "sectionVolumeAndTransitions": "볼륨 및 전환",
@@ -42,9 +217,12 @@
   "appearanceAccentPurple": "보라색",
   "appearanceAccentPink": "분홍색",
   "appearanceGlassClarity": "글래스 투명도",
+  "appearanceGlassOutlines": "글래스 윤곽선",
+  "appearanceGlassOutlinesSubtitle": "Mornye 글래스 주변에 장식적인 테두리를 표시합니다. 이 기능을 비활성화하면 블러 효과와 굴절 효과는 유지됩니다",
   "appearanceGlassClaritySubtitle": "Mornye 메뉴와 하단바의 투명도를 조절할 수 있습니다. 텍스트 대비는 유지됩니다",
   "appearanceGlassTinted": "색조",
   "appearanceGlassClear": "투명",
+  "appearanceGlassClearPerformance": "매우 투명한 글래스 효과는 전력을 더 많이 사용할 수 있으며, 오래된 기기에서는 화면이 덜 부드럽게 느껴질 수 있습니다. 필요하다면 투명도 수준을 낮추세요",
   "appearanceGlassClarityBlurOff": "이 기기에서 글래스 효과가 불투명하게 표시됩니다. 투명도를 조절하려면 '{setting}'을 켜세요",
   "@appearanceGlassClarityBlurOff": {
     "description": "Shown under the disabled glass clarity slider when the device renders Mornye glass without blur. The placeholder is the name of the force-blur toggle.",
@@ -56,7 +234,12 @@
   },
   "appearanceGlassClarityHighContrast": "시스템에서 대비 증가를 요청하여 글래스가 불투명하게 표시됩니다. 그래도 글래스 효과를 사용하려면 ‘{setting}’을 켜세요. 텍스트 대비는 유지됩니다.",
   "@appearanceGlassClarityHighContrast": {
-    "description": "Explains the system contrast request and the explicit glass-only override."
+    "description": "Explains the system contrast request (which can include medium contrast) and the explicit glass-only override.",
+    "placeholders": {
+      "setting": {
+        "type": "String"
+      }
+    }
   },
   "appearanceUseSystemFont": "시스템 글꼴 사용",
   "appearanceUseSystemFontSubtitle": "앱 텍스트에 기기 기본 글꼴을 사용합니다",
@@ -104,6 +287,18 @@
   "homeRecent": "최근 기록",
   "@homeRecent": {
     "description": "Section header for recent searches"
+  },
+  "searchRecentlySearched": "Recently Searched",
+  "@searchRecentlySearched": {
+    "description": "Section header for recent searches on the desktop Search page"
+  },
+  "searchLibraryPrompt": "Search Your Library",
+  "@searchLibraryPrompt": {
+    "description": "Shown on the desktop Search page when the Library scope has no search words yet"
+  },
+  "searchBrowse": "Browse",
+  "@searchBrowse": {
+    "description": "Section header for home feed tiles on the desktop Search page"
   },
   "historyFilterAll": "모두",
   "@historyFilterAll": {
@@ -165,6 +360,30 @@
   "downloadFolderOrganization": "폴더 분류 형식",
   "@downloadFolderOrganization": {
     "description": "Title of the folder organization picker bottom sheet"
+  },
+  "downloadFolderTemplate": "Custom Folder Structure",
+  "@downloadFolderTemplate": {
+    "description": "Setting for editing a relative download folder template"
+  },
+  "downloadFolderTemplateDescription": "Use naming tags and / for subfolders. Saving replaces the preset album and singles layout. Empty folder names use Unknown.",
+  "@downloadFolderTemplateDescription": {
+    "description": "Help for custom download folder templates"
+  },
+  "folderOrganizationCustom": "Custom template",
+  "@folderOrganizationCustom": {
+    "description": "Folder organization mode using a user-defined template"
+  },
+  "folderTemplateInvalid": "Enter a relative folder path with supported tags. Empty folders, . and .. are not allowed.",
+  "@folderTemplateInvalid": {
+    "description": "Validation error for an invalid folder template"
+  },
+  "folderTemplatePreview": "Example folder path",
+  "@folderTemplatePreview": {
+    "description": "Label for a sample expanded folder template"
+  },
+  "folderTemplatePreviewFailed": "미리듣기를 사용할 수 없음",
+  "@folderTemplatePreviewFailed": {
+    "description": "Shown when the native folder preview could not be generated"
   },
   "appearanceTitle": "디자인",
   "@appearanceTitle": {
@@ -343,6 +562,15 @@
     }
   },
   "optionsArtistTagMode": "아티스트 태그 모드",
+  "metadataSeparators": "메타데이터 구분 기호",
+  "metadataSeparatorsDescription": "향후 다운로드에서 쉼표 또는 세미콜론으로 구분된 값을 어떻게 결합할지 선택합니다. 사용자 정의 아티스트 구분자는 결합된 태그를 사용하며, '주요 아티스트만' 설정은 계속 적용됩니다. & 또는 /가 포함된 이름은 그대로 유지됩니다",
+  "metadataSeparatorSource": "소스 서식 유지",
+  "metadataSeparatorComma": "콤마 (,)",
+  "metadataSeparatorSemicolon": "세미콜론 (;)",
+  "metadataSeparatorSlash": "슬래시 (/)",
+  "metadataSeparatorCustom": "사용자 정의 구분 기호",
+  "metadataSeparatorPreview": "미리보기",
+  "metadataSeparatorInvalid": "줄 바꿈이나 제어 문자 없이 1~16자를 사용하세요",
   "@optionsArtistTagMode": {
     "description": "Setting title for how artist metadata is written into files"
   },
@@ -498,6 +726,14 @@
   "aboutMobileSource": "모바일 소스 코드",
   "@aboutMobileSource": {
     "description": "Link to mobile GitHub repo"
+  },
+  "aboutLyricsWebsite": "가사 웹사이트",
+  "@aboutLyricsWebsite": {
+    "description": "Link to the Zarz-LRC website for searching and saving word-timed lyrics"
+  },
+  "aboutServiceStatus": "서비스 상태",
+  "@aboutServiceStatus": {
+    "description": "Link to the status page of the Mornye online services"
   },
   "aboutReportIssue": "문제 신고",
   "@aboutReportIssue": {
@@ -1370,6 +1606,30 @@
   "@updateDontRemind": {
     "description": "Update button - skip this version"
   },
+  "updateViewRelease": "View Release",
+  "@updateViewRelease": {
+    "description": "Update button - open the release page when this install cannot update itself (deb, Flatpak, no matching package)"
+  },
+  "updateStartingInstaller": "Starting the installer...",
+  "@updateStartingInstaller": {
+    "description": "Update status on Windows - the downloaded installer is starting and the app will close"
+  },
+  "updateMacInstallHint": "The disk image is open in Finder. Quit Mornye, then drag Mornye from the disk image to Applications and replace the old copy.",
+  "@updateMacInstallHint": {
+    "description": "Update instructions on macOS after the downloaded disk image opens"
+  },
+  "updateQuitApp": "Quit Mornye",
+  "@updateQuitApp": {
+    "description": "Update button on macOS - quit the app so the new version can replace it"
+  },
+  "updateReadyToRestart": "The update is installed. Restart Mornye to use it.",
+  "@updateReadyToRestart": {
+    "description": "Update status on Linux after the AppImage was replaced"
+  },
+  "updateRestartNow": "Restart Now",
+  "@updateRestartNow": {
+    "description": "Update button on Linux - restart the app after the AppImage was replaced"
+  },
   "providerPriorityTitle": "제공자 우선순위",
   "@providerPriorityTitle": {
     "description": "Provider priority page title"
@@ -1644,6 +1904,10 @@
   "@trackFileNotFound": {
     "description": "Error - file doesn't exist"
   },
+  "trackFileUnavailable": "파일을 현재 사용할 수 없습니다. 저장소 접근 권한을 확인하고 다시 시도하세요",
+  "@trackFileUnavailable": {
+    "description": "File access failed; this does not mean the file was deleted"
+  },
   "trackOpenInDeezer": "Deezer에서 열기",
   "@trackOpenInDeezer": {
     "description": "Action - open track in Deezer app"
@@ -1776,6 +2040,15 @@
   "trackDeleteConfirmTitle": "기기에서 제거하시겠습니까?",
   "@trackDeleteConfirmTitle": {
     "description": "Delete confirmation title"
+  },
+  "trackDeleteNetworkConfirmMessage": "이렇게 하면 네트워크 저장소에서 파일이 영구적으로 삭제되고 라이브러리와 기록에서도 제거됩니다",
+  "snackbarDeleteTracksFailed": "{count} 개의 {count, plural, =1{트랙} other{트랙}}을 삭제할 수 없습니다. 저장소 접근 권한을 확인하고 다시 시도하세요",
+  "@snackbarDeleteTracksFailed": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
   },
   "trackDeleteConfirmMessage": "이렇게 하면 다운로드된 파일이 영구적으로 삭제되고 기록에서 제거됩니다",
   "@trackDeleteConfirmMessage": {
@@ -2631,6 +2904,36 @@
   "@libraryRemoveFolderMessage": {
     "description": "Confirmation shown before removing a library source"
   },
+  "libraryUnreadableFiles": "{count, plural, =1{1 file couldn't be read} other{{count} files couldn't be read}}",
+  "@libraryUnreadableFiles": {
+    "description": "Count of files the last scan of a library folder skipped because it could not read them",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryUnreadableFilesTitle": "Unreadable files",
+  "@libraryUnreadableFilesTitle": {
+    "description": "Title of the list of files a library scan could not read, and the action that opens it"
+  },
+  "libraryUnreadableFilesSubtitle": "These files were left out of your library. They may be damaged, still downloading, or blocked by the storage app.",
+  "@libraryUnreadableFilesSubtitle": {
+    "description": "Explanation above the list of files a library scan could not read"
+  },
+  "libraryUnreadableFilesAction": "See which files and why",
+  "@libraryUnreadableFilesAction": {
+    "description": "Subtitle of the library folder action that lists unreadable files"
+  },
+  "libraryUnreadableFilesMore": "{count, plural, =1{1 more file isn't listed} other{{count} more files aren't listed}}",
+  "@libraryUnreadableFilesMore": {
+    "description": "Note below the unreadable files list when the scan skipped more files than it lists",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "libraryShowDuplicateIndicator": "중복 표시기 표시",
   "@libraryShowDuplicateIndicator": {
     "description": "Toggle for duplicate indicator in search"
@@ -2883,6 +3186,14 @@
   "@libraryFilterSortOldest": {
     "description": "Sort option - oldest first"
   },
+  "libraryFilterSortSizeLargest": "Size (Largest first)",
+  "@libraryFilterSortSizeLargest": {
+    "description": "Library sort option - largest files first"
+  },
+  "libraryFilterSortSizeSmallest": "Size (Smallest first)",
+  "@libraryFilterSortSizeSmallest": {
+    "description": "Library sort option - smallest files first"
+  },
   "libraryFilterSortAlbumAsc": "앨범 (오름차순)",
   "@libraryFilterSortAlbumAsc": {
     "description": "Sort option - album ascending"
@@ -3118,6 +3429,40 @@
   "libraryPlaybackNormalizationSubtitle": "트랙에 ReplayGain 또는 R128 태그가 있는 경우에 이를 사용하여 트랙 간 음량을 일정하게 맞춥니다",
   "@libraryPlaybackNormalizationSubtitle": {
     "description": "Subtitle explaining playback volume normalization"
+  },
+  "playbackNormalizationMode": "Gain mode",
+  "@playbackNormalizationMode": {
+    "description": "Label for choosing between track and album ReplayGain during playback"
+  },
+  "playbackNormalizationModeTrack": "트랙",
+  "@playbackNormalizationModeTrack": {
+    "description": "Gain mode that levels every track on its own"
+  },
+  "playbackNormalizationModeAlbum": "앨범",
+  "@playbackNormalizationModeAlbum": {
+    "description": "Gain mode that keeps the loudness differences inside an album"
+  },
+  "playbackNormalizationPreamp": "Pre-amp",
+  "@playbackNormalizationPreamp": {
+    "description": "Label for the dB offset applied on top of ReplayGain during playback"
+  },
+  "playbackNormalizationPreampValue": "{gain} dB (target {target} LUFS)",
+  "@playbackNormalizationPreampValue": {
+    "description": "Pre-amp value with the resulting target loudness",
+    "placeholders": {
+      "gain": {
+        "type": "String",
+        "example": "-7"
+      },
+      "target": {
+        "type": "String",
+        "example": "-25"
+      }
+    }
+  },
+  "playbackNormalizationPreampHint": "Lower values play quieter. Normalization only turns tracks down, so it never clips.",
+  "@playbackNormalizationPreampHint": {
+    "description": "Hint under the normalization pre-amp slider"
   },
   "cacheAudioAnalysis": "오디오 분석 캐시",
   "@cacheAudioAnalysis": {
@@ -4000,6 +4345,18 @@
   "@lyricsProviderLyricsPlusDesc": {
     "description": "Description for LyricsPlus provider"
   },
+  "lyricsProviderZarzLrcDesc": "Zarz-LRC의 Apple Music 가사 (단어별)",
+  "@lyricsProviderZarzLrcDesc": {
+    "description": "Description for the first-party Zarz-LRC provider"
+  },
+  "lyricsProviderLrcRedDesc": "녹음과 일치하는 Apple Music 가사 (단어별)",
+  "@lyricsProviderLrcRedDesc": {
+    "description": "Description for lrc.red provider"
+  },
+  "lyricsProviderBetterLyricsDesc": "인기곡 Apple Music 가사 (단어별)",
+  "@lyricsProviderBetterLyricsDesc": {
+    "description": "Description for BetterLyrics provider, which only answers songs it has already cached"
+  },
   "lyricsProviderExtensionDesc": "확장 기능 제공자",
   "@lyricsProviderExtensionDesc": {
     "description": "Generic description for extension-based lyrics providers"
@@ -4574,6 +4931,51 @@
   "@editMetadataAutoFillNoneSelected": {
     "description": "Snackbar when user taps Fetch without selecting any fields"
   },
+  "editMetadataLyricsSearch": "Find lyrics online",
+  "@editMetadataLyricsSearch": {
+    "description": "Button in the edit metadata lyrics section that searches every lyrics provider"
+  },
+  "lyricsPickerTitle": "Choose lyrics",
+  "@lyricsPickerTitle": {
+    "description": "Title of the sheet listing each lyrics provider's result"
+  },
+  "lyricsPickerNeedsTitle": "Enter a title and artist first",
+  "@lyricsPickerNeedsTitle": {
+    "description": "Snackbar when searching lyrics without a title or artist"
+  },
+  "lyricsPickerNoProviders": "No lyrics providers are enabled. Turn some on in Settings > Lyrics.",
+  "@lyricsPickerNoProviders": {
+    "description": "Shown in the lyrics picker when no provider is enabled"
+  },
+  "lyricsPickerWordSynced": "Word-synced",
+  "@lyricsPickerWordSynced": {
+    "description": "Lyrics result timed word by word"
+  },
+  "lyricsPickerSynced": "Synced",
+  "@lyricsPickerSynced": {
+    "description": "Lyrics result timed line by line"
+  },
+  "lyricsPickerPlain": "Plain text",
+  "@lyricsPickerPlain": {
+    "description": "Lyrics result without timing"
+  },
+  "lyricsPickerInstrumental": "연주곡",
+  "@lyricsPickerInstrumental": {
+    "description": "Lyrics result that marks the track as instrumental"
+  },
+  "lyricsPickerNotFound": "No lyrics found",
+  "@lyricsPickerNotFound": {
+    "description": "A lyrics provider returned nothing for this track"
+  },
+  "lyricsPickerLineCount": "{count, plural, =1{1 line} other{{count} lines}}",
+  "@lyricsPickerLineCount": {
+    "description": "Number of lyric lines in a provider's result",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "editMetadataFieldTitle": "제목",
   "@editMetadataFieldTitle": {
     "description": "Chip label for title field in auto-fill selector"
@@ -4814,6 +5216,19 @@
   "@audioAnalysisRescan": {
     "description": "Tooltip/label for the button that re-runs the audio analysis, discarding cached results"
   },
+  "audioAnalysisSaveSpectrogram": "Save Spectrogram",
+  "@audioAnalysisSaveSpectrogram": {
+    "description": "Tooltip for the spectrogram button that saves the plot, with its axes and legend, as a PNG image the user places in storage"
+  },
+  "audioAnalysisSpectrogramSaved": "Spectrogram saved to {fileName}",
+  "@audioAnalysisSpectrogramSaved": {
+    "description": "Snackbar after the spectrogram image was saved",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
   "downloadRedownloadFakeHiRes": "가짜 Hi-Res 다시 다운로드",
   "@downloadRedownloadFakeHiRes": {
     "description": "Setting title: automatically replace downloads that measure as fake Hi-Res"
@@ -4945,6 +5360,14 @@
   "extensionsHomeFeedProvider": "홈 피드 제공자",
   "@extensionsHomeFeedProvider": {
     "description": "Extensions page - label for home feed provider selector"
+  },
+  "extensionsHomeFeedCountry": "홈 피드 국가",
+  "@extensionsHomeFeedCountry": {
+    "description": "Country picker for the active Home feed extension"
+  },
+  "extensionsHomeFeedCountryDescription": "VPN 없이 국가의 홈 추천을 선택하세요",
+  "@extensionsHomeFeedCountryDescription": {
+    "description": "Help for choosing regional Home recommendations"
   },
   "extensionsHomeFeedDescription": "메인 화면에 홈 피드를 제공하는 확장 기능을 선택하세요",
   "@extensionsHomeFeedDescription": {
@@ -5195,6 +5618,10 @@
   "notifLibraryScanFailed": "라이브러리 스캔 실패",
   "@notifLibraryScanFailed": {
     "description": "Notification title when library scan fails"
+  },
+  "notifLibraryScanInterruptedBody": "이전 라이브러리 스캔이 중단되었습니다. 계속하려면 폴더를 다시 스캔하세요. 색인된 트랙은 계속 사용할 수 있습니다",
+  "@notifLibraryScanInterruptedBody": {
+    "description": "Recovery notice after the app stops during a library scan"
   },
   "notifLibraryScanCancelled": "라이브러리 스캔이 취소됨",
   "@notifLibraryScanCancelled": {
@@ -6347,6 +6774,14 @@
   "@nowPlayingNoLyrics": {
     "description": "Empty state when the playing file has no embedded lyrics"
   },
+  "nowPlayingSearchLyricsOnline": "온라인 검색",
+  "@nowPlayingSearchLyricsOnline": {
+    "description": "Button in the player's empty lyrics state that looks up lyrics from the enabled lyrics providers"
+  },
+  "nowPlayingNoLyricsOnline": "온라인에서 가사를 찾을 수 없습니다",
+  "@nowPlayingNoLyricsOnline": {
+    "description": "Empty state after an online lyrics search for the playing track found nothing"
+  },
   "nowPlayingLibraryEmpty": "라이브러리가 비어 있음",
   "@nowPlayingLibraryEmpty": {
     "description": "Snackbar when shuffle library is requested but library has no tracks"
@@ -6605,6 +7040,14 @@
   "@regionCountryUS": {
     "description": "Country name for SongLink region picker"
   },
+  "regionCountryIT": "이탈리아",
+  "@regionCountryIT": {
+    "description": "Country name for Italy"
+  },
+  "regionCountryES": "스페인",
+  "@regionCountryES": {
+    "description": "Country name for Spain"
+  },
   "regionCountryGB": "영국",
   "@regionCountryGB": {
     "description": "Country name for SongLink region picker"
@@ -6706,6 +7149,10 @@
   "@extensionVerificationCopyLink": {
     "description": "Button to copy the extension verification URL"
   },
+  "extensionVerificationPasteCallback": "Paste callback",
+  "@extensionVerificationPasteCallback": {
+    "description": "Button that completes extension verification from a callback URL in the clipboard"
+  },
   "extensionVerificationLinkCopied": "인증 링크가 복사됨",
   "@extensionVerificationLinkCopied": {
     "description": "Snackbar after copying the extension verification URL"
@@ -6734,6 +7181,33 @@
   "libraryFilterMetadataMissingReplayGain": "리플레이게인 누락",
   "@libraryFilterMetadataMissingReplayGain": {
     "description": "Filter option for scanned tracks without ReplayGain gain tags"
+  },
+  "libraryFilterMetadataHasReplayGain": "리플레이게인 있음",
+  "@libraryFilterMetadataHasReplayGain": {
+    "description": "Filter option for tracks with indexed ReplayGain track or album gain tags"
+  },
+  "libraryFilterIncompleteAlbums": "불완전한 앨범",
+  "@libraryFilterIncompleteAlbums": {
+    "description": "Library filter for albums with confirmed missing track positions"
+  },
+  "libraryAlbumCompletenessUnknown": "앨범 완성도 알 수 없음",
+  "@libraryAlbumCompletenessUnknown": {
+    "description": "Library filter and status for missing, conflicting or ambiguous album track counts"
+  },
+  "libraryAlbumMissingTracks": "{present}/{expected} 트랙 · {missing} 누락",
+  "@libraryAlbumMissingTracks": {
+    "description": "Album completeness badge tooltip",
+    "placeholders": {
+      "present": {
+        "type": "int"
+      },
+      "expected": {
+        "type": "int"
+      },
+      "missing": {
+        "type": "int"
+      }
+    }
   },
   "trackOptionCopyTrackName": "트랙 제목 복사",
   "@trackOptionCopyTrackName": {
@@ -6779,11 +7253,54 @@
     "description": "Selected state of the compact favorite action"
   },
   "autoMixDescription": "곡을 비트에 맞춰 믹싱하고, 음정은 유지한 채 템포를 조절합니다. 비트를 맞출 수 없는 경우에는 크로스페이드를 사용합니다",
+  "playerCoverStyle": "커버 아트",
+  "@playerCoverStyle": {
+    "description": "Settings section choosing how the player shows cover art"
+  },
+  "playerCoverStyleDefault": "기본값",
+  "@playerCoverStyleDefault": {
+    "description": "Cover art style: artwork card above the controls"
+  },
+  "playerCoverStyleDefaultDescription": "컨트롤 위에 카드 형태로 표시되는 아트워크",
+  "@playerCoverStyleDefaultDescription": {
+    "description": "Subtitle of the default cover art style"
+  },
+  "playerCoverStyleFullScreen": "전체 화면",
+  "@playerCoverStyleFullScreen": {
+    "description": "Cover art style: artwork fills the top of the player"
+  },
+  "playerCoverStyleFullScreenDescription": "아트워크가 플레이어 상단을 채우고 흐릿하게 페이드 인됩니다. 모션 아트워크는 Mornye에서 항상 전체 화면으로 표시됩니다",
+  "@playerCoverStyleFullScreenDescription": {
+    "description": "Subtitle of the full screen cover art style"
+  },
+  "musicHaptics": "음악 햅틱",
+  "@musicHaptics": {
+    "description": "Setting that vibrates the phone along with the music"
+  },
+  "musicHapticsDescription": "다운로드한 노래와 로컬 음악의 비트에 맞춰 진동합니다",
+  "@musicHapticsDescription": {
+    "description": "Subtitle of the music haptics setting"
+  },
+  "musicHapticsSensitivity": "Sensitivity",
+  "@musicHapticsSensitivity": {
+    "description": "Slider for how many beats trigger music haptics; higher values vibrate on softer hits"
+  },
+  "musicHapticsStrength": "Strength",
+  "@musicHapticsStrength": {
+    "description": "Slider for how strongly the phone vibrates with music haptics"
+  },
   "autoMixOn": "AutoMix 켜기",
   "autoMixOff": "AutoMix 끄기",
   "autoplayOn": "자동재생 켜기",
   "autoplayOff": "자동재생 끄기",
   "autoplayFromLibrary": "라이브러리에서 자동재생",
+  "autoplayDescription": "다운로드 목록이 끝나면 라이브러리에 있는 관련 노래를 이어서 재생합니다",
+  "autoplayPersonalization": "개인 맞춤 자동 재생",
+  "autoplayPersonalizationDescription": "이 기기에서 듣거나 건너뛴 노래를 바탕으로 취향을 학습합니다. 이 기능을 비활성화하면 취향 학습이 중단되고 일반 자동 재생으로 돌아갑니다. 학습 데이터는 이 기기에서만 비공개로 처리됩니다",
+  "autoplayResetLearning": "추천 학습 초기화",
+  "autoplayResetLearningConfirmTitle": "추천 학습을 초기화하시겠습니까?",
+  "autoplayResetLearningConfirmMessage": "자동 재생은 청취에서 학습한 내용을 잊고 건너뜁니다. 이 작업은 되돌릴 수 없습니다",
+  "autoplayResetLearningConfirm": "초기화",
   "profileTitle": "프로필",
   "profileSetUp": "프로필 설정",
   "profileEdit": "이름 및 사진 편집",
@@ -6794,11 +7311,705 @@
   "profileRemovePhoto": "사진 삭제",
   "profilePhotoError": "20MB보다 작은 유효한 이미지를 선택하세요",
   "profileSaveError": "프로필을 저장할 수 없습니다. 다시 시도하세요",
+  "homeGreetingMorning1": "좋은 아침이에요",
+  "homeGreetingMorning2": "활기차게 하루를 시작해요",
+  "homeGreetingMorning3": "새로운 하루를 시작해요",
+  "homeGreetingAfternoon1": "좋은 오후예요",
+  "homeGreetingAfternoon2": "기분 좋은 오후예요",
+  "homeGreetingAfternoon3": "좋은 분위기 그대로 이어가요",
+  "homeGreetingEvening1": "좋은 저녁이에요",
+  "homeGreetingEvening2": "편안한 시간 보내세요",
+  "homeGreetingEvening3": "아름다운 저녁이에요",
+  "homeGreetingNight1": "좋은 밤이에요",
+  "homeGreetingNight2": "깊어가는 밤, 함께해요",
+  "homeGreetingNight3": "평온한 밤 보내세요",
+  "homeGreetingNamed": "{greeting}, {name}",
+  "@homeGreetingNamed": {
+    "description": "Home greeting followed by the first name from the user's profile",
+    "placeholders": {
+      "greeting": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "homeTaglineListening": "무엇을 듣고 있나요?",
+  "@homeTaglineListening": {
+    "description": "Rotating Home prompt under the greeting"
+  },
+  "homeTaglineLink": "링크가 있으신가요? 검색창에 넣어주세요",
+  "@homeTaglineLink": {
+    "description": "Rotating Home prompt explaining that links can be pasted into search"
+  },
+  "homeTaglineDiscover": "다음으로 좋아하는 앨범을 찾아보세요",
+  "@homeTaglineDiscover": {
+    "description": "Rotating Home prompt under the greeting"
+  },
+  "homeContinueListening": "계속 듣기",
+  "@homeContinueListening": {
+    "description": "Home section header for the track currently loaded in the player"
+  },
+  "homeRecentlyAdded": "최근 추가됨",
+  "@homeRecentlyAdded": {
+    "description": "Home section header for the newest downloaded and scanned tracks"
+  },
+  "homeOnRepeat": "반복 재생",
+  "@homeOnRepeat": {
+    "description": "Home section header for the most played tracks of the last four weeks"
+  },
+  "homeShortcuts": "바로가기",
+  "@homeShortcuts": {
+    "description": "Home section header for quick links to player tools"
+  },
   "artistUpcomingConcerts": "예정된 콘서트",
   "artistAllUpcomingConcerts": "모든 예정된 콘서트",
   "artistNoUpcomingConcerts": "예정된 콘서트가 없습니다",
+  "motionArtwork": "애니메이션 아트워크",
+  "listeningStats": "청취 통계",
+  "listeningStatsRecord": "청취 기록",
+  "listeningStatsDescription": "지금부터 이 기기에만 저장됩니다. 내부 플레이어의 재생 기록만 기록하며, 일시정지, 버퍼링 및 탐색은 청취 시간에 포함되지 않습니다. 30초 이상 재생하면 한 번의 재생으로 기록됩니다",
+  "listeningStatsEmpty": "내부 플레이어로 음악을 재생하여 청취 기록 요약을 시작하세요. 이전에 들은 기록은 복구할 수 없습니다",
+  "listeningStatsDays": "{days} 일",
+  "@listeningStatsDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningStatsMinutes": "{minutes} 분",
+  "@listeningStatsMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningStatsTotals": "{plays, plural, =1{1 회 재생} other{{plays} 회 재생}} · {tracks, plural, =1{1 개의 트랙} other{{tracks} 개의 트랙}} · {days, plural, =1{1 일 활동} other{{days} 일 활동}}",
+  "@listeningStatsTotals": {
+    "placeholders": {
+      "plays": {
+        "type": "int"
+      },
+      "tracks": {
+        "type": "int"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningStatsPreviousYear": "이전 연도",
+  "listeningStatsNextYear": "다음 연도",
+  "listeningStatsActivity": "최근 청취 일수 · 분",
+  "listeningStatsTopArtists": "인기 아티스트",
+  "listeningStatsTopTracks": "인기 트랙",
+  "listeningStatsLoadError": "청취 통계를 불러올 수 없습니다",
+  "listeningStatsClear": "청취 통계 지우기",
+  "listeningStatsClearError": "청취 통계 지울 수 없습니다. 다시 시도하세요",
+  "listeningStatsClearDescription": "이 기기에서 모든 청취 통계를 삭제하시겠습니까? 음악과 재생목록은 유지됩니다",
+  "libraryArtistsEmpty": "음악을 다운로드하거나 로컬 라이브러리를 검색하면 여기에 아티스트가 표시됩니다",
+  "listeningRewind": "되감기",
+  "listeningRewindDescription": "최근 몇 주, 몇 달 동안의 하이라이트를 다시 경험하세요",
+  "listeningRewindChoosePeriod": "기간 선택",
+  "listeningRewindLastWeeks": "지난 {weeks} 주",
+  "@listeningRewindLastWeeks": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindLastMonths": "지난 {months} 달",
+  "@listeningRewindLastMonths": {
+    "placeholders": {
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindThisYear": "{year} 년 동안",
+  "@listeningRewindThisYear": {
+    "placeholders": {
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindIntroTitle": "되돌아보기",
+  "listeningRewindIntroBody": "{start} 부터 {end}까지 재생한 내용을 되돌아봅니다",
+  "@listeningRewindIntroBody": {
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "listeningRewindMinutesTitle": "재생 시간",
+  "listeningRewindMinutesUnit": "{minutes, plural, =1{분} other{분}}",
+  "@listeningRewindMinutesUnit": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindHours": "{hours, plural, =1{대략 1 시간 분량의 음악} other{대략 {hours} 시간 분량의 음악}}",
+  "@listeningRewindHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindMore": "이전 기간보다 {percent}% 더 많음",
+  "@listeningRewindMore": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindLess": "이전 기간보다 {percent}% 더 적음",
+  "@listeningRewindLess": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindSame": "이전 기간과 거의 동일",
+  "listeningRewindTopArtistTitle": "가장 좋아하는 아티스트",
+  "listeningRewindArtistShare": "청취 시간의 {percent}%",
+  "@listeningRewindArtistShare": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindArtistsTitle": "로테이션 아티스트",
+  "listeningRewindTopTrackTitle": "가장 좋아하는 노래",
+  "listeningRewindPlays": "{plays, plural, =1{1 재생} other{{plays} 재생}}",
+  "@listeningRewindPlays": {
+    "placeholders": {
+      "plays": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindTracksTitle": "반복 재생 중인 노래",
+  "listeningRewindTopAlbumTitle": "계속해서 다시 듣게 된 앨범",
+  "listeningRewindNewArtistsTitle": "새로운 발견",
+  "listeningRewindNewArtistsBody": "{count, plural, =1{새로운 아티스트 1 명을 찾았습니다} other{새로운 아티스트 {count} 명을 찾았습니다}}",
+  "@listeningRewindNewArtistsBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindRhythmTitle": "청취 리듬",
+  "listeningRewindPeakDay": "가장 많이 들었던 날",
+  "listeningRewindFavoriteDay": "좋아하는 날",
+  "listeningRewindStreak": "최장 연속 기록",
+  "listeningRewindStreakDays": "{days, plural, =1{1 일} other{{days} 일 연속 재생}}",
+  "@listeningRewindStreakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindReplayTitle": "재생을 멈출 수 없습니다",
+  "listeningRewindReplayBody": "{date} 에 {plays} 번 재생했습니다",
+  "@listeningRewindReplayBody": {
+    "placeholders": {
+      "plays": {
+        "type": "int"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "listeningRewindOutroTitle": "당신의 되돌아보기입니다",
+  "listeningRewindOutroBody": "계속 들어보세요. 다음 되돌아보기가 이미 완성되어 가고 있습니다",
+  "listeningRewindEmpty": "아직 이 기간의 음악 감상 기록이 충분하지 않습니다. 내부 플레이어로 음악을 재생한 후 나중에 다시 확인하세요",
+  "listeningRewindLoadError": "되돌아보기를 불러올 수 없습니다",
+  "listeningRewindSlide": "{count} 의 {index} 슬라이드",
+  "@listeningRewindSlide": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindShare": "공유",
+  "listeningRewindShareError": "리와인드를 공유할 수 없습니다",
+  "listeningRewindNext": "다음",
+  "listeningRewindPrevious": "이전",
+  "listeningRewindMonthlyReady": "지난 4주를 다시 재생할 준비가 되었습니다",
+  "listeningRewindYearTitle": "{year} 음악",
+  "@listeningRewindYearTitle": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "listeningRewindYearEyebrow": "연말 되돌아보기",
+  "listeningRewindYearBanner": "올해 최고의 아티스트, 노래, 순간들",
+  "listeningRewindYearIntroBody": "첫 ​​곡부터 가장 많이 들었던 달까지, 올해 들었던 모든 것",
+  "listeningRewindNumbersTitle": "숫자로 보는 한 해",
+  "listeningRewindSongsLabel": "노래",
+  "listeningRewindArtistsLabel": "아티스트",
+  "listeningRewindAlbumsLabel": "앨범",
+  "listeningRewindDaysLabel": "음악 감상 일수",
+  "listeningRewindDaysShare": "하루 중 {percent}%의 시간에 음악을 들었습니다",
+  "@listeningRewindDaysShare": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindMonthsTitle": "월별",
+  "listeningRewindBiggestMonthLabel": "가장 많이 듣은 달",
+  "listeningRewindBiggestMonth": "가장 많이 들었던 달은 {month}입니다",
+  "@listeningRewindBiggestMonth": {
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "listeningRewindMonthlyArtistsTitle": "이달의 아티스트",
+  "listeningRewindLoyalTitle": "항상 당신 곁에",
+  "listeningRewindLoyalBody": "{days, plural, =1{하루 동안 함께했어요} other{{days} 일 동안 함께했어요}}",
+  "@listeningRewindLoyalBody": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindFirstSongTitle": "한 해가 시작된 곳",
+  "listeningRewindFirstSongBody": "첫 ​​청취일에 가장 많이 재생한 노래, {date}",
+  "@listeningRewindFirstSongBody": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "listeningRewindYearOutroTitle": "{year} 년 음악 기록입니다",
+  "@listeningRewindYearOutroTitle": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "listeningRewindYearOutroBody": "멋진 음악으로 가득한 또 한 해를 축하합니다",
+  "weeklyReleases": "새 릴리스",
+  "weeklyReleasesDescription": "설치된 메타데이터 확장 기능에서 제공하는, 좋아하는 아티스트의 최신 앨범과 싱글입니다",
+  "weeklyReleasesEmpty": "이 기간에는 발매일자가 확인된 음원이 없습니다. 좋아하는 아티스트를 추가하거나 더 긴 기간을 선택해 보세요",
+  "weeklyReleasesUnavailable": "일부 아티스트는 확인할 수 없습니다. 해당 아티스트의 기존 저장 결과는 그대로 유지됩니다. 제공자에 따라 아티스트의 전체 음원 목록이나 정확한 발매일자를 제공하지 않을 수 있습니다",
+  "weeklyReleasesLoadError": "새 릴리스를 확인할 수 없습니다. 아래로 당겨 새로고침하세요",
+  "motionArtworkDescription": "메타데이터 제공자에서 제공하는 앨범 커버의 반복 재생 동영상입니다. 비활성화하면 정지 이미지를 사용하여 배터리 소모를 줄일 수 있습니다",
+  "libraryLoading": "라이브러리를 불러오는 중…",
+  "libraryLoadFailed": "라이브러리를 불러올 수 없습니다. 저장된 폴더와 트랙 목록을 다시 불러오려면 다시 시도하세요",
+  "discordPresenceDescription": "내부 플레이어에서 재생한 음악의 제목, 아티스트, 앨범 및 재생 진행 상황을 Discord 프로필에 공유합니다. 로컬 오디오 파일과 앨범 아트워크는 절대 업로드되지 않습니다. 재생을 일시 정지하거나 중지하면 공유 정보가 삭제됩니다",
+  "discordPresenceDisabled": "비활성화됨",
+  "discordPresenceLink": "Discord 계정 연결",
+  "discordPresenceConnecting": "Discord에 연결하는 중…",
+  "discordPresenceReady": "음악 재생 준비",
+  "discordPresenceActive": "현재 트랙을 공유하는 중",
+  "discordPresenceUnavailable": "Discord를 사용할 수 없습니다. 재생 중 다시 연결을 시도하고 있습니다",
+  "discordPresenceBuildUnavailable": "이 빌드에서는 Discord SDK를 사용할 수 없습니다",
+  "discordPresenceAndroidHelp": "이 휴대폰에 Discord를 설치하고 로그인하세요. Discord에서 활동 공유를 허용하세요. 외부 플레이어는 지원되지 않습니다",
+  "discordPresenceIosHelp": "Discord를 통해 계정을 연결하고 활동 공유를 허용하세요. 인증에 실패하면 다시 연결하려면 탭하세요.",
+  "discordPresenceDesktopHelp": "Keep the Discord desktop app running and signed in on this computer, and allow activity sharing in Discord.",
+  "discordPresenceDisconnect": "계정 연결 해제 및 삭제",
+  "autoMixSettingsTitle": "믹스 전환",
+  "autoMixAutomaticDuration": "자동 지속 시간",
+  "autoMixDuration": "믹스 지속 시간",
+  "autoMixEffect": "전환 효과",
+  "autoMixEffectAuto": "자동",
+  "autoMixEffectCrossfade": "크로스페이드",
+  "autoMixEffectMuffled": "머플",
+  "autoMixEffectEcho": "에코",
+  "autoMixEffectPitch": "피치",
+  "autoMixEffectCustom": "사용자 정의",
+  "autoMixEffectsHelp": "믹스 재생 중 현재 재생 중인 곡의 끝부분에 효과가 적용됩니다. 재생 시간이 짧은 곡은 겹치는 구간도 더 짧게 적용됩니다",
+  "autoMixSpeed": "속도",
+  "autoMixPitch": "피치 (반음)",
+  "autoMixEcho": "에코",
+  "autoMixLowPass": "머플 필터",
+  "autoMixMixing": "믹싱",
+  "autoMixCrossfading": "크로스페이드",
+  "playbackAutomation": "자동 재생",
+  "playbackPauseOnMute": "음소거 시 일시 정지",
+  "snackbarPlaybackMuted": "미디어 음량이 0입니다. 재생이 일시 정지되었습니다. 계속하려면 다시 재생 버튼을 누르세요.",
+  "@snackbarPlaybackMuted": {
+    "description": "Shown after mute automation pauses playback; another explicit play request can override the pause."
+  },
+  "playbackPauseOnMuteDescription": "미디어 음량이 0이 되면 일시 정지하고, 음량을 높이면 재생을 다시 시작합니다. 수동으로 일시 정지한 경우에는 일시 정지 상태를 유지합니다. 일반 오디오 출력에서만 작동합니다",
+  "playbackOnHeadphonesConnected": "헤드폰 연결 시 재생",
+  "playbackOnHeadphonesConnectedDescription": "유선 또는 Bluetooth 헤드폰이 연결되면 현재 재생 중인 곡을 이어서 재생합니다. 연결이 해제되면 재생이 일시 정지됩니다. 내부 플레이어에서만 작동합니다",
+  "appearanceCustomFont": "사용자 정의 글꼴",
+  "appearanceCustomFontSubtitle": "TTF 또는 OTF 파일을 가져옵니다 (최대 10MB). 테마 및 시스템 글꼴을 덮어씁니다",
+  "appearanceCustomFontInvalid": "이 글꼴을 불러올 수 없습니다. 10MB 이하의 유효한 TTF 또는 OTF 파일을 선택하세요",
+  "appearanceCustomFontReset": "테마 글꼴 사용",
+  "equalizerTitle": "이퀄라이저",
+  "equalizerDescription": "5–31 밴드, 음색 조절, 프리앰프 및 다이내믹스",
+  "equalizerEnable": "이퀄라이저 활성화",
+  "equalizerBands": "밴드",
+  "equalizerTone": "톤 및 스테레오",
+  "equalizerPreamp": "프리밴드",
+  "equalizerBass": "베이스",
+  "equalizerTreble": "고음",
+  "equalizerBalance": "밸런스",
+  "equalizerDynamics": "다이내믹스",
+  "equalizerHeadroom": "오토매틱 헤드룸",
+  "equalizerHeadroomDescription": "주파수를 증폭할 여유를 확보하려면 입력 게인을 낮추세요",
+  "equalizerLimiter": "피크 리미터",
+  "equalizerLimiterDescription": "클리핑을 줄이려면 피크 레벨을 −0.5 dBFS 미만으로 유지하세요",
+  "equalizerCompressor": "콤프레서",
+  "equalizerCompressorDescription": "조용한 부분과 큰 소리가 나는 부분의 음량 차이를 줄입니다",
+  "equalizerThreshold": "임계값",
+  "equalizerRatio": "비율",
+  "equalizerAttack": "어택",
+  "equalizerRelease": "릴리스",
+  "equalizerPresets": "프리셋",
+  "equalizerSavePreset": "프리셋 저장",
+  "equalizerPresetName": "프리셋 이름",
+  "equalizerImport": "프리셋 가져오기",
+  "equalizerExport": "프리셋 공유",
+  "equalizerImportInvalid": "Choose a valid Mornye equalizer preset (JSON, up to 64 KB).",
+  "equalizerSaved": "프리셋이 저장됨",
+  "equalizerResetTitle": "이퀄라이저를 초기화하시겠습니까?",
+  "equalizerResetDescription": "평탄한 이퀄라이저 곡선과 기본 음색 및 다이내믹 설정으로 복원합니다. 저장된 프리셋은 유지됩니다",
+  "equalizerBypass": "비트 퍼펙트, 다이렉트 USB 및 독점 Hi-Res 출력에서는 이퀄라이저가 적용되지 않습니다. 이퀄라이저를 사용하려면 비트 퍼펙트 출력을 비활성화하세요. 외부 플레이어는 자체 효과를 관리합니다",
+  "equalizerCurve": "EQ 곡선 (예상됨)",
+  "equalizerCurveDescription": "곡선은 각 밴드의 게인 값을 나타냅니다. 실제 주파수 응답은 출력 엔진에 따라 달라집니다",
+  "equalizerEffectivePreamp": "헤드룸 후 입력 게인",
+  "equalizerDeletePreset": "프레셋 삭제",
+  "equalizerCustom": "사용자 정의",
+  "equalizerManagePresets": "프리셋 관리",
+  "lyricsShareTitle": "가사 공유",
+  "@lyricsShareTitle": {
+    "description": "Screen that turns selected lyric lines into an image for stories"
+  },
+  "lyricsShareSelectHint": "최대 {count} 줄 선택하세요",
+  "@lyricsShareSelectHint": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "lyricsShareLimit": "최대 {count} 줄까지 공유할 수 있습니다",
+  "@lyricsShareLimit": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "lyricsShareAction": "공유",
+  "lyricsShareError": "가사 이미지를 만들 수 없습니다",
+  "lyricsShareBackgroundArtwork": "아트워크",
+  "lyricsShareBackgroundColor": "커버 색상",
+  "lyricsShareBackgroundDark": "어두움",
+  "lyricsShareBackgroundLight": "밝음",
+  "audioInfoTitle": "오디오 정보",
+  "@audioInfoTitle": {
+    "description": "Sheet with technical details of the playing track, opened from the quality badge"
+  },
+  "audioInfoSource": "소스 파일",
+  "audioInfoSignal": "시그널",
+  "audioInfoLoudness": "음량",
+  "audioInfoProcessing": "처리 중",
+  "audioInfoOutput": "출력",
+  "audioInfoAnalysis": "스펙트럼 및 레벨 분석",
+  "audioInfoQuality": "음질",
+  "audioInfoHiResLossless": "Hi-Res 무손실",
+  "audioInfoLossless": "무손실",
+  "audioInfoLossy": "손실",
+  "audioInfoFormat": "형식",
+  "audioInfoCodec": "코덱",
+  "audioInfoSampleRate": "샘플 레이트",
+  "audioInfoBitDepth": "비트 심도",
+  "audioInfoChannels": "채널",
+  "audioInfoChannelCount": "{count, plural, =1{모노} =2{스테레오} other{{count} 채널}}",
+  "@audioInfoChannelCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "audioInfoBitrate": "비트 전송룔",
+  "audioInfoDuration": "재생 시간",
+  "audioInfoFileSize": "파일 크기",
+  "audioInfoCompression": "압축",
+  "audioInfoCompressionValue": "압축 해제 크기의 {percent}%",
+  "@audioInfoCompressionValue": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "audioInfoLocation": "위치",
+  "audioInfoLocationLocal": "기기 저장소",
+  "audioInfoLocationShared": "공유된 폴더",
+  "audioInfoLocationNetwork": "네트워크 저장소",
+  "audioInfoPcmRate": "비압축 데이터 전송률",
+  "audioInfoFrequencyRange": "주파수 범위",
+  "audioInfoFrequencyRangeValue": "최대 {frequency} (나이퀴스트)",
+  "@audioInfoFrequencyRangeValue": {
+    "placeholders": {
+      "frequency": {
+        "type": "String"
+      }
+    }
+  },
+  "audioInfoDynamicRange": "이론적 동적 ​​범위",
+  "audioInfoTrackGain": "트랙 게인",
+  "audioInfoTrackPeak": "트랙 피크",
+  "audioInfoAlbumGain": "앨범 게인",
+  "audioInfoAlbumPeak": "앨범 피크",
+  "audioInfoNoGainTags": "리플레이 게인 태그 없음",
+  "audioInfoApplied": "적용된 {gain}",
+  "@audioInfoApplied": {
+    "placeholders": {
+      "gain": {
+        "type": "String"
+      }
+    }
+  },
+  "audioInfoOn": "켜짐",
+  "audioInfoOff": "꺼짐",
+  "audioInfoBypassed": "직접 출력으로 우회됨",
+  "audioInfoPlayer": "플레이어",
+  "audioInfoPlayerValue": "Mornye built-in player",
+  "audioInfoSignalPath": "시그널 경로",
+  "audioInfoPathSystem": "시스템 믹서",
+  "audioInfoPathDirect": "다이렉트 USB, 시스템 믹서 우회",
+  "audioInfoPathExclusive": "시스템 믹서를 우회하는 전용 출력",
+  "audioInfoDecoder": "디코더",
+  "audioInfoHardware": "하드웨어",
+  "audioInfoSoftware": "소프트웨어",
+  "audioInfoBands": "{count} 밴드",
+  "@audioInfoBands": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "audioInfoTempo": "템포",
+  "audioInfoResampling": "리샘플링",
+  "audioInfoResamplingNone": "없음, 속도 일치",
+  "audioInfoBitPerfect": "비트-퍼펙트",
+  "audioInfoBitPerfectActive": "예, 변경되지 않은 샘플",
+  "audioInfoBitPerfectNo": "아니요, 시스템에서 믹싱",
+  "audioInfoDevice": "기기",
+  "audioInfoDeviceType": "{type, select, speaker{휴대폰 스피커} earpiece{이어피스} wired_headphones{유선 헤드폰} wired_headset{유선 헤드셋} line{라인 출력} bluetooth{블루투스Bluetooth} bluetooth_le{블루투스 LE 오디오} usb{USB 오디오} usb_headset{USB 헤드셋} hdmi{HDMI} dock{도킹 스테이션} cast{캐스트} hearing_aid{보청기} airplay{에어플레이} car{차량용 오디오} other{기타}}",
+  "@audioInfoDeviceType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "audioInfoOutputRate": "출력 샘플 레이트",
+  "audioInfoOutputFormat": "출력 형식",
+  "audioInfoDeviceRates": "기기 샘플 레이트",
+  "audioInfoDeviceFormats": "기기 형식",
+  "audioInfoAnyRate": "모두",
+  "audioInfoBuffer": "믹서 버퍼",
+  "audioInfoLatency": "출력 지연",
+  "audioInfoLowLatency": "저지연 오디오",
+  "audioInfoProAudio": "프로 오디오",
+  "audioInfoSupported": "지원됨",
+  "audioInfoNotSupported": "지원되지 않음",
+  "audioInfoSpatial": "공간 오디오",
+  "audioInfoHeadTracking": "해드 트래킹",
+  "audioInfoUnavailable": "사용 불가",
+  "audioInfoFixedVolume": "기기에서 제어됨",
+  "audioInfoCopy": "보고서 복사",
+  "audioInfoCopied": "오디오 정보가 복사됨",
+  "lyricsTextSize": "가사 텍스트 사이즈",
+  "lyricsTextPreview": "좋아하는 노래의 모든 가사를 따라가 보세요",
+  "appCrashTitle": "앱이 이전에 충돌함",
+  "appAnrTitle": "The app previously stopped responding",
+  "@appAnrTitle": {
+    "description": "Title for an Android ANR report, distinct from a crash."
+  },
+  "appAnrMessage": "A diagnostic report was saved. You can copy it and send it to the developer to help investigate.",
+  "@appAnrMessage": {
+    "description": "Message shown for an Android process exit due to an ANR."
+  },
+  "appCrashMessage": "충돌 보고서가 저장되었습니다. 보고서를 복사하여 개발자에게 보내 조사에 도움을 주세요",
+  "appCrashDetails": "오류 및 로그 보기",
+  "appCrashCopy": "개발자를 위해 보고서 복사",
+  "appCrashDismiss": "닫기",
+  "appCrashCopyFailed": "충돌 보고서를 복사할 수 없습니다. 다시 시도하세요",
+  "appCrashDismissFailed": "충돌 보고서를 해제할 수 없습니다. 다시 시도하세요",
   "optionsEmbeddedCoverSizeOriginal": "원본 해상도",
   "@optionsEmbeddedCoverSizeOriginal": {
     "description": "Option that preserves the provider artwork at its original resolution"
+  },
+  "desktopShortcutTooltip": "{action} ({shortcut})",
+  "@desktopShortcutTooltip": {
+    "description": "Desktop tooltip that names an action and its keyboard shortcut, for example 'Next track (Ctrl+Right)'",
+    "placeholders": {
+      "action": {
+        "type": "String"
+      },
+      "shortcut": {
+        "type": "String"
+      }
+    }
+  },
+  "desktopPlayerIdle": "Not playing",
+  "@desktopPlayerIdle": {
+    "description": "Desktop player bar text when no track is loaded"
+  },
+  "desktopVolumeUp": "Increase volume",
+  "desktopVolumeDown": "Decrease volume",
+  "desktopTableSortedAscending": "{column}, sorted ascending",
+  "@desktopTableSortedAscending": {
+    "description": "Screen reader label of a song table column header that sorts the table A to Z",
+    "placeholders": {
+      "column": {
+        "type": "String"
+      }
+    }
+  },
+  "desktopTableSortedDescending": "{column}, sorted descending",
+  "@desktopTableSortedDescending": {
+    "description": "Screen reader label of a song table column header that sorts the table Z to A",
+    "placeholders": {
+      "column": {
+        "type": "String"
+      }
+    }
+  },
+  "desktopMenuOpen": "Open",
+  "@desktopMenuOpen": {
+    "description": "Context menu item that opens an album, artist, playlist or folder"
+  },
+  "desktopMenuShowDetails": "Show details",
+  "@desktopMenuShowDetails": {
+    "description": "Context menu item that opens a track's metadata page"
+  },
+  "desktopDropToImport": "Drop to add to your library",
+  "@desktopDropToImport": {
+    "description": "Overlay shown while music files or folders are dragged over the desktop window"
+  },
+  "desktopDropImported": "Adding {count} {count, plural, =1{folder} other{folders}} to your library",
+  "@desktopDropImported": {
+    "description": "Snackbar after dropping music onto the desktop window; the folders are scanned into the library",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "desktopDropNothingToImport": "Drop music files or folders to add them to your library",
+  "@desktopDropNothingToImport": {
+    "description": "Snackbar when the dropped items contain no folders or audio files"
+  },
+  "desktopAllPlaylists": "All Playlists",
+  "@desktopAllPlaylists": {
+    "description": "Desktop sidebar row that opens the list of every playlist"
+  },
+  "desktopMenuSettings": "Settings…",
+  "@desktopMenuSettings": {
+    "description": "macOS app menu item that opens Settings"
+  },
+  "desktopMenuFile": "File",
+  "desktopMenuEdit": "Edit",
+  "desktopMenuView": "View",
+  "desktopWindowMode": "Window mode",
+  "desktopWindowed": "Windowed",
+  "desktopWindowFullscreen": "전체 화면",
+  "desktopWindowBorderless": "Borderless",
+  "desktopExitFullscreen": "Exit full screen",
+  "desktopMinimizeWindow": "Minimize window",
+  "desktopZoomWindow": "Maximize or restore window",
+  "desktopWindowModeUnavailable": "The window mode could not be changed. Try again after the current window transition finishes.",
+  "desktopMenuControls": "Controls",
+  "desktopMenuWindow": "Window",
+  "desktopMenuHelp": "Help",
+  "desktopMenuPlayPause": "Play/Pause",
+  "desktopMenuMiniPlayer": "Mini Player",
+  "@desktopMenuMiniPlayer": {
+    "description": "Window menu item, player bar button and Keyboard Shortcuts row that shrink the window into a small player floating above other windows"
+  },
+  "desktopMiniPlayerExpand": "Show Full Window",
+  "@desktopMiniPlayerExpand": {
+    "description": "Mini player button that returns the window to its full size"
+  },
+  "desktopMenuRefresh": "새로고침",
+  "@desktopMenuRefresh": {
+    "description": "View menu item and Keyboard Shortcuts row that reloads the page on screen (Home, Repo, statistics)"
+  },
+  "desktopMenuProjectPage": "Project page",
+  "@desktopMenuProjectPage": {
+    "description": "Help menu item that opens the app's source repository"
+  },
+  "desktopDownloadsShowAll": "Show all",
+  "@desktopDownloadsShowAll": {
+    "description": "Button in the desktop downloads popover that opens the full download queue"
+  },
+  "desktopDownloadsQueued": "Waiting",
+  "@desktopDownloadsQueued": {
+    "description": "Status of a download in the desktop downloads popover that has not started yet"
+  },
+  "desktopDownloadsCancel": "다운로드를 취소하시겠습니까",
+  "@desktopDownloadsCancel": {
+    "description": "Tooltip of the button that cancels one download in the desktop downloads popover"
+  },
+  "desktopScrollBack": "Scroll back",
+  "@desktopScrollBack": {
+    "description": "Tooltip of the desktop button that scrolls a horizontal shelf of albums or artists back"
+  },
+  "desktopScrollForward": "Scroll forward",
+  "@desktopScrollForward": {
+    "description": "Tooltip of the desktop button that scrolls a horizontal shelf of albums or artists forward"
+  },
+  "settingsKeyboardShortcuts": "Keyboard Shortcuts",
+  "@settingsKeyboardShortcuts": {
+    "description": "Desktop Settings page that lists the app's keyboard shortcuts"
+  },
+  "settingsKeyboardShortcutsSubtitle": "Keys for playback, navigation and panels",
+  "@settingsKeyboardShortcutsSubtitle": {
+    "description": "Subtitle of the Keyboard Shortcuts entry in desktop Settings"
+  },
+  "desktopShortcutsNavigation": "Navigation",
+  "@desktopShortcutsNavigation": {
+    "description": "Keyboard Shortcuts section for moving between pages"
+  },
+  "desktopShortcutDismiss": "Close dialog or page",
+  "@desktopShortcutDismiss": {
+    "description": "Keyboard Shortcuts row for Escape, which leaves a text field or closes the top dialog or page"
+  },
+  "desktopShortcutToggleSidebar": "Show or hide sidebar",
+  "@desktopShortcutToggleSidebar": {
+    "description": "Keyboard Shortcuts row for the shortcut that collapses or expands the desktop sidebar"
   }
 }

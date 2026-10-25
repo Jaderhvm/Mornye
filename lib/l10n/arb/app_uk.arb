@@ -1,27 +1,179 @@
 {
-  "extensionsNoExtensions": "Розширень не встановлено",
-  "@extensionsNoExtensions": {
-    "description": "Empty state - no extensions"
+  "trackBpm": "BPM",
+  "trackMood": "Mood",
+  "subsonicAddToLibrary": "Add server to Library",
+  "subsonicLibraryAdded": "Server added to Library",
+  "subsonicLibraryDescription": "Sync the server catalogue and artwork to Library. Music stays on your server. Rescan it in Local Library settings to update the catalogue.",
+  "subsonicAuthentication": "Authentication",
+  "subsonicToken": "Salted token",
+  "subsonicPasswordAuth": "Password",
+  "subsonicApiKey": "API key",
+  "subsonicUsername": "Username",
+  "subsonicPassword": "Password",
+  "subsonicSearch": "Search server music...",
+  "subsonicMoreAlbums": "More albums",
+  "subsonicErrorApi": "The server does not support this API version or authentication method. Check the server settings and the selected sign-in method.",
+  "networkDownloadDestination": "Місце збереження мережевих завантажень",
+  "@networkDownloadDestination": {
+    "description": "Files settings item that opens network storage to choose a folder for downloaded music"
   },
-  "trackConvertActionLabelLossy": "{sourceFormat} → {targetFormat} @ {bitrate}",
-  "@trackConvertActionLabelLossy": {
-    "description": "Convert button label for lossy conversion",
-    "placeholders": {
-      "sourceFormat": {
-        "type": "String"
-      },
-      "targetFormat": {
-        "type": "String"
-      },
-      "bitrate": {
-        "type": "String"
-      }
-    }
+  "networkUseForDownloads": "Завантажити в цю теку",
+  "@networkUseForDownloads": {
+    "description": "Action to select the current network folder as the download destination; also the settings subtitle when no network destination is selected"
   },
-  "trackConvertResamplerSwr": "SWR",
-  "@trackConvertResamplerSwr": {
-    "description": "Lossless conversion default FFmpeg swresample resampler option"
+  "networkDownloadSelected": "Вибране місце для завантаження",
+  "@networkDownloadSelected": {
+    "description": "Status label replacing the download destination action when the current network folder is already selected"
   },
+  "networkUseLocalDownloads": "Використовуйте локальну теку для завантаження",
+  "@networkUseLocalDownloads": {
+    "description": "Files settings action that clears the network download destination and returns downloads to the local folder"
+  },
+  "networkDownloadAccessFailed": "Не вдалося записати в цю теку.",
+  "@networkDownloadAccessFailed": {
+    "description": "Snackbar prefix when the write-access check fails while selecting a network download folder; followed by a specific network error message"
+  },
+  "networkUploading": "Завантаження до мережевого сховища",
+  "@networkUploading": {
+    "description": "Download queue status during upload of prepared audio to the network destination; a progress percentage may follow"
+  },
+  "networkDownloadDescription": "Підготуйте пісні на цьому пристрої, а потім завантажте їх на мережевий накопичувач NAS. Тримайте додаток відкритим до завершення завантаження. Повторна спроба використовує вже підготовлене аудіо. Наявні файли буде збережено; нові завантаження з такою ж назвою отримають цифровий суфікс.",
+  "@networkDownloadDescription": {
+    "description": "Help below the network download destination action explaining local preparation, upload, retry behavior, and preservation of existing files; NAS means network-attached storage"
+  },
+  "networkAddToLibrary": "Додати теку до бібліотеки",
+  "@networkAddToLibrary": {
+    "description": "Action that adds the current network folder as a Library source and starts scanning it"
+  },
+  "networkLibraryAdded": "Теку додано до бібліотеки",
+  "@networkLibraryAdded": {
+    "description": "Status label replacing the add-to-Library action after the network folder has been added as a source; does not mean scanning has finished"
+  },
+  "networkLibraryDescription": "Скануйте цю теку та її підтеки. Музика залишається на вашому сервері, а метадані та обкладинки зберігаються на цьому пристрої. Керуйте бібліотекою або повторно скануйте її в налаштуваннях.",
+  "@networkLibraryDescription": {
+    "description": "Help below the add-to-Library action explaining recursive scanning, local metadata and artwork storage, and management in Local Library settings"
+  },
+  "networkStorage": "Мережеве сховище",
+  "@networkStorage": {
+    "description": "Title and navigation label for the screen used to manage network connections and browse remote music folders"
+  },
+  "networkErrorUnreachable": "Не вдалося зв'язатися з сервером. Перевірте, чи має цей телефон доступ до мережі та чи запущено службу спільного доступу до файлів. Для SMB порт 445 має бути доступним.",
+  "@networkErrorUnreachable": {
+    "description": "Network access error for an unreachable server, with connection troubleshooting and the SMB port requirement"
+  },
+  "networkErrorTimeout": "Сервер не відповів вчасно. Перевірте з'єднання та спробуйте ще раз.",
+  "@networkErrorTimeout": {
+    "description": "Network access error when a server operation exceeds its time limit"
+  },
+  "networkErrorAuthentication": "Сервер відхилив вхід в систему. Перевірте ім'я користувача, пароль і домен. Залиште поле домену порожнім, якщо ваш сервер його не вимагає.",
+  "@networkErrorAuthentication": {
+    "description": "Network access error when the server rejects credentials; domain refers to the optional SMB authentication domain"
+  },
+  "networkErrorPermission": "Цей обліковий запис не має дозволу на відкриття цієї спільної теки або ресурсу. Перевірте його права на читання на сервері.",
+  "@networkErrorPermission": {
+    "description": "Network access error when the server denies account permissions for a shared folder; distinct from the device's local network permission"
+  },
+  "networkErrorLocalPermission": "Local network access is not allowed. Allow Nearby devices for Mornye in Android app settings, then try again.",
+  "@networkErrorLocalPermission": {
+    "description": "Network access error when Android denies local network permission; Nearby devices is the Android app permission setting"
+  },
+  "networkErrorShare": "Спільний ресурс або теку не знайдено. Для протоколу SMB вказуйте ім'я спільної теки сервера після його адреси, наприклад smb://server/Music/.",
+  "@networkErrorShare": {
+    "description": "Network access error for a missing share or folder; share means an SMB shared folder and the example illustrates its URL path"
+  },
+  "networkErrorProtocol": "Цьому серверу та клієнту SMB не вдалося узгодити підтримуваний протокол. Увімкніть SMB2 або SMB3 на сервері. SMB1 не підтримується.",
+  "@networkErrorProtocol": {
+    "description": "Network access error for incompatible SMB protocol versions; preserve the version names SMB1, SMB2, and SMB3"
+  },
+  "networkErrorAddress": "Перевірте адресу сервера. Використовуйте протокол smb://server/share/ для SMB або адресу http:// чи https:// для WebDAV та HTTP.",
+  "@networkErrorAddress": {
+    "description": "Network access error for an invalid address, with URL scheme examples for SMB, WebDAV, and HTTP connections"
+  },
+  "networkConnections": "Збережені з'єднання",
+  "@networkConnections": {
+    "description": "Section heading above the list of saved network storage connections"
+  },
+  "networkServer": "Сервер",
+  "@networkServer": {
+    "description": "Connection form section heading above the display name and server or audio URL fields"
+  },
+  "networkCredentials": "Увійти (необов'язково)",
+  "@networkCredentials": {
+    "description": "Connection form section heading for optional server credentials"
+  },
+  "networkRefresh": "Оновити",
+  "@networkRefresh": {
+    "description": "Toolbar tooltip for reloading saved connections or the current network folder listing"
+  },
+  "networkStorageDescription": "Під'єднатися до вашого NAS або музичного сервера та перегляньте його теки. Дані для входу зберігаються надійно на цьому пристрої.",
+  "@networkStorageDescription": {
+    "description": "Introduction shown in the empty connections screen and connection form, explaining remote folder browsing and secure local credential storage; NAS means network-attached storage"
+  },
+  "networkAddConnection": "Додати з'єднання",
+  "@networkAddConnection": {
+    "description": "Action label, toolbar tooltip, and form title for adding a network storage connection"
+  },
+  "networkEditConnection": "Редагувати підключення",
+  "@networkEditConnection": {
+    "description": "Edit button tooltip and form title for changing an existing network storage connection"
+  },
+  "networkConnectionName": "Ім’я",
+  "@networkConnectionName": {
+    "description": "Required connection form field for a user-chosen display name identifying the saved connection"
+  },
+  "networkAddress": "Сервер або URL-адреса аудіо",
+  "@networkAddress": {
+    "description": "Required connection form field for the server or direct audio URL, using the scheme appropriate to the selected protocol"
+  },
+  "networkProtocol": "Протокол",
+  "@networkProtocol": {
+    "description": "Connection form section heading for choosing SMB, WebDAV, or HTTP / HTTPS"
+  },
+  "networkUsername": "Ім’я користувача (необов’язково)",
+  "@networkUsername": {
+    "description": "Optional connection form field for the server account username"
+  },
+  "networkPassword": "Пароль (необов'язково)",
+  "@networkPassword": {
+    "description": "Optional connection form field for the server account password, with input characters hidden"
+  },
+  "networkDomain": "Домен (необов'язково)",
+  "@networkDomain": {
+    "description": "Optional connection form field shown only for SMB; refers to the authentication domain, not the server's internet domain name"
+  },
+  "networkConnectSave": "З’єднати та зберегти",
+  "@networkConnectSave": {
+    "description": "Connection form action that checks access to the network source before saving the connection"
+  },
+  "networkErrorCertificate": "Не вдалося перевірити HTTPS-сертифікат сервера. Відредагуйте це підключення, щоб переглянути сертифікат і додати його до довірених, або перевірте конфігурацію HTTPS на сервері.",
+  "@networkErrorCertificate": {
+    "description": "Network access error for HTTPS certificate verification failure, directing the user to review the certificate in the connection form; unrelated to SMB authentication"
+  },
+  "networkCertificatePrompt": "Цей сервер використовує ненадійний сертифікат HTTPS. Роутери та мережевий накопичувач NAS часто використовують із власним підписом сертифікати. Перевірте адресу сервера та відбиток SHA-256, перш ніж довіряти йому. Довіра поширюється лише на цей сертифікат на цьому сервері; змінений сертифікат потребуватиме повторного підтвердження.",
+  "@networkCertificatePrompt": {
+    "description": "Connection form warning shown above the HTTPS origin and certificate SHA-256 fingerprint; approval trusts only that fingerprint for this connection's HTTPS origin, not a global certificate authority or an SMB server"
+  },
+  "networkTrustCertificate": "Сертифікат безпеки та повторна спроба",
+  "@networkTrustCertificate": {
+    "description": "Action approving the displayed certificate SHA-256 fingerprint for this connection's HTTPS origin and retrying connect-and-save; does not grant global certificate trust"
+  },
+  "networkRemoveConnection": "Видалити підключення",
+  "@networkRemoveConnection": {
+    "description": "Connection form action that removes the saved connection and its credentials, without deleting files on the server"
+  },
+  "networkNoFiles": "Не знайдено підтримуваних музичних файлів або тек.",
+  "@networkNoFiles": {
+    "description": "Empty folder message when the network listing contains no directories or supported audio files"
+  },
+  "networkConnectionError": "Не вдалося отримати доступ до мережевого джерела. Перевірте адресу сервера, облікові дані та підключення, а потім повторіть спробу.",
+  "@networkConnectionError": {
+    "description": "Fallback network access error when the failure has no more specific classification"
+  },
+  "extensionAccountTitle": "Обліковий запис розширення",
+  "extensionAccountInvalidForm": "Розширення повернуло неправильну форму облікового запису.",
+  "extensionAccountRestartLogin": "Перезапустіть вхід в обліковий запис, щоб продовжити.",
+  "extensionAccountRequiredValue": "Введіть значення.",
+  "extensionAccountInvalidNumber": "Введіть коректний номер.",
   "settingsPlaybackSubtitle": "Плеєр, гучність, автомікшування та аудіовихід",
   "sectionPlayer": "Плеєр",
   "sectionVolumeAndTransitions": "Гучність та переходи",
@@ -65,9 +217,12 @@
   "appearanceAccentPurple": "Фіолетовий",
   "appearanceAccentPink": "Рожевий",
   "appearanceGlassClarity": "Прозорість скла",
+  "appearanceGlassOutlines": "Скляні обводи",
+  "appearanceGlassOutlinesSubtitle": "Показувати декоративні краї навколо скла Mornye. Вимкнення цієї функції зберігає розмиття та заломлення.",
   "appearanceGlassClaritySubtitle": "Налаштуйте прозорість меню та навігації Mornye. Контрастність тексту зберігається.",
   "appearanceGlassTinted": "Тонований",
   "appearanceGlassClear": "Очистити",
+  "appearanceGlassClearPerformance": "Ефект прозорого скла може споживати більше енергії та уповільнювати старіші пристрої. Зменште прозорість, якщо необхідно.",
   "appearanceGlassClarityBlurOff": "Скло на цьому пристрої непрозоре. Увімкніть «{setting}», щоб налаштувати прозорість.",
   "@appearanceGlassClarityBlurOff": {
     "description": "Shown under the disabled glass clarity slider when the device renders Mornye glass without blur. The placeholder is the name of the force-blur toggle.",
@@ -79,7 +234,12 @@
   },
   "appearanceGlassClarityHighContrast": "Система запитує підвищену контрастність, тому скло залишається непрозорим. Увімкніть «{setting}», щоб усе одно використовувати ефект скла; контрастність тексту зберігається.",
   "@appearanceGlassClarityHighContrast": {
-    "description": "Explains the system contrast request and the explicit glass-only override."
+    "description": "Explains the system contrast request (which can include medium contrast) and the explicit glass-only override.",
+    "placeholders": {
+      "setting": {
+        "type": "String"
+      }
+    }
   },
   "appearanceUseSystemFont": "Використовувати системний шрифт",
   "appearanceUseSystemFontSubtitle": "Використовуйте стандартний шрифт вашого пристрою для тексту в додатку.",
@@ -127,6 +287,18 @@
   "homeRecent": "Нещодавні",
   "@homeRecent": {
     "description": "Section header for recent searches"
+  },
+  "searchRecentlySearched": "Recently Searched",
+  "@searchRecentlySearched": {
+    "description": "Section header for recent searches on the desktop Search page"
+  },
+  "searchLibraryPrompt": "Search Your Library",
+  "@searchLibraryPrompt": {
+    "description": "Shown on the desktop Search page when the Library scope has no search words yet"
+  },
+  "searchBrowse": "Browse",
+  "@searchBrowse": {
+    "description": "Section header for home feed tiles on the desktop Search page"
   },
   "historyFilterAll": "Усі",
   "@historyFilterAll": {
@@ -188,6 +360,30 @@
   "downloadFolderOrganization": "Організація теки",
   "@downloadFolderOrganization": {
     "description": "Title of the folder organization picker bottom sheet"
+  },
+  "downloadFolderTemplate": "Custom Folder Structure",
+  "@downloadFolderTemplate": {
+    "description": "Setting for editing a relative download folder template"
+  },
+  "downloadFolderTemplateDescription": "Use naming tags and / for subfolders. Saving replaces the preset album and singles layout. Empty folder names use Unknown.",
+  "@downloadFolderTemplateDescription": {
+    "description": "Help for custom download folder templates"
+  },
+  "folderOrganizationCustom": "Custom template",
+  "@folderOrganizationCustom": {
+    "description": "Folder organization mode using a user-defined template"
+  },
+  "folderTemplateInvalid": "Enter a relative folder path with supported tags. Empty folders, . and .. are not allowed.",
+  "@folderTemplateInvalid": {
+    "description": "Validation error for an invalid folder template"
+  },
+  "folderTemplatePreview": "Example folder path",
+  "@folderTemplatePreview": {
+    "description": "Label for a sample expanded folder template"
+  },
+  "folderTemplatePreviewFailed": "Попередній перегляд недоступний",
+  "@folderTemplatePreviewFailed": {
+    "description": "Shown when the native folder preview could not be generated"
   },
   "appearanceTitle": "Зовнішній вигляд",
   "@appearanceTitle": {
@@ -366,12 +562,25 @@
     }
   },
   "optionsArtistTagMode": "Режим тегу виконавця",
+  "metadataSeparators": "Розділювачі метаданих",
+  "metadataSeparatorsDescription": "Виберіть, як об’єднувати значення, розділені комою або крапкою з комою, у майбутніх завантаженнях. Для власних роздільників виконавців використовується об’єднаний тег; правило «Тільки головний виконавець» залишається в силі. Імена, що містять & або /, зберігаються.",
+  "metadataSeparatorSource": "Зберегти формат оригіналу",
+  "metadataSeparatorComma": "Кома()",
+  "metadataSeparatorSemicolon": "Крапка з комою (;)",
+  "metadataSeparatorSlash": "Слеш (/)",
+  "metadataSeparatorCustom": "Користувацький розділювач",
+  "metadataSeparatorPreview": "Перед перегляд",
+  "metadataSeparatorInvalid": "Використовуйте від 1 до 16 символів без розділів і керівних символів.",
   "@optionsArtistTagMode": {
     "description": "Setting title for how artist metadata is written into files"
   },
   "optionsArtistTagModeDescription": "Виберіть, як будуть записуватися кілька виконавців у вбудовані теги.",
   "@optionsArtistTagModeDescription": {
     "description": "Bottom-sheet description for artist tag mode setting"
+  },
+  "optionsArtistTagModeJoined": "Одне об'єднане значення",
+  "@optionsArtistTagModeJoined": {
+    "description": "Artist tag mode option that joins multiple artists into one value"
   },
   "optionsArtistTagModeJoinedSubtitle": "Для максимальної сумісності програвача напишіть одне значення ARTIST, наприклад, «Виконавець A, Виконавець B».",
   "@optionsArtistTagModeJoinedSubtitle": {
@@ -517,6 +726,14 @@
   "aboutMobileSource": "Мобільний вихідний код",
   "@aboutMobileSource": {
     "description": "Link to mobile GitHub repo"
+  },
+  "aboutLyricsWebsite": "Сайт текстів",
+  "@aboutLyricsWebsite": {
+    "description": "Link to the Zarz-LRC website for searching and saving word-timed lyrics"
+  },
+  "aboutServiceStatus": "Стан послуг",
+  "@aboutServiceStatus": {
+    "description": "Link to the status page of the Mornye online services"
   },
   "aboutReportIssue": "Повідомити про проблему",
   "@aboutReportIssue": {
@@ -786,6 +1003,38 @@
   "setupLanguageSystemDefault": "Система за замовчуванням",
   "@setupLanguageSystemDefault": {
     "description": "Option to use the system language"
+  },
+  "dialogCancel": "Скасувати",
+  "@dialogCancel": {
+    "description": "Dialog button - cancel action"
+  },
+  "dialogSave": "Зберегти",
+  "@dialogSave": {
+    "description": "Dialog button - save changes"
+  },
+  "dialogDelete": "Видалити",
+  "@dialogDelete": {
+    "description": "Dialog button - delete item"
+  },
+  "dialogRetry": "Повторити спробу",
+  "@dialogRetry": {
+    "description": "Dialog button - retry action"
+  },
+  "dialogClear": "Очистити",
+  "@dialogClear": {
+    "description": "Dialog button - clear items"
+  },
+  "dialogDone": "Готово",
+  "@dialogDone": {
+    "description": "Dialog button - action completed"
+  },
+  "dialogImport": "Імпорт",
+  "@dialogImport": {
+    "description": "Dialog button - import data"
+  },
+  "dialogDownload": "Завантажити",
+  "@dialogDownload": {
+    "description": "Confirm button in Download All dialog"
   },
   "previewPlay": "Відтворити попередній",
   "@previewPlay": {
@@ -1357,6 +1606,30 @@
   "@updateDontRemind": {
     "description": "Update button - skip this version"
   },
+  "updateViewRelease": "View Release",
+  "@updateViewRelease": {
+    "description": "Update button - open the release page when this install cannot update itself (deb, Flatpak, no matching package)"
+  },
+  "updateStartingInstaller": "Starting the installer...",
+  "@updateStartingInstaller": {
+    "description": "Update status on Windows - the downloaded installer is starting and the app will close"
+  },
+  "updateMacInstallHint": "The disk image is open in Finder. Quit Mornye, then drag Mornye from the disk image to Applications and replace the old copy.",
+  "@updateMacInstallHint": {
+    "description": "Update instructions on macOS after the downloaded disk image opens"
+  },
+  "updateQuitApp": "Quit Mornye",
+  "@updateQuitApp": {
+    "description": "Update button on macOS - quit the app so the new version can replace it"
+  },
+  "updateReadyToRestart": "The update is installed. Restart Mornye to use it.",
+  "@updateReadyToRestart": {
+    "description": "Update status on Linux after the AppImage was replaced"
+  },
+  "updateRestartNow": "Restart Now",
+  "@updateRestartNow": {
+    "description": "Update button on Linux - restart the app after the AppImage was replaced"
+  },
   "providerPriorityTitle": "Пріоритет постачальника",
   "@providerPriorityTitle": {
     "description": "Provider priority page title"
@@ -1631,6 +1904,10 @@
   "@trackFileNotFound": {
     "description": "Error - file doesn't exist"
   },
+  "trackFileUnavailable": "Файл наразі недоступний. Перевірте доступ до сховища та спробуйте ще раз.",
+  "@trackFileUnavailable": {
+    "description": "File access failed; this does not mean the file was deleted"
+  },
   "trackOpenInDeezer": "Відкрити в Deezer",
   "@trackOpenInDeezer": {
     "description": "Action - open track in Deezer app"
@@ -1763,6 +2040,15 @@
   "trackDeleteConfirmTitle": "Видалити з пристрою?",
   "@trackDeleteConfirmTitle": {
     "description": "Delete confirmation title"
+  },
+  "trackDeleteNetworkConfirmMessage": "Це безповоротно видалить файл із мережевого сховища та вилучить його з бібліотеки й історії.",
+  "snackbarDeleteTracksFailed": "Не вдалося видалити {count} {count, plural, =1{трек} one{трек} few{треки} other{треків}}. Перевірте доступ до сховища та спробуйте ще раз.",
+  "@snackbarDeleteTracksFailed": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
   },
   "trackDeleteConfirmMessage": "Це назавжди видалить завантажений файл і вилучить його з вашої історії.",
   "@trackDeleteConfirmMessage": {
@@ -1978,9 +2264,9 @@
   "@extensionsInstalledSection": {
     "description": "Section header - installed extensions"
   },
-  "optionsArtistTagModeJoined": "Одне об'єднане значення",
-  "@optionsArtistTagModeJoined": {
-    "description": "Artist tag mode option that joins multiple artists into one value"
+  "extensionsNoExtensions": "Розширень не встановлено",
+  "@extensionsNoExtensions": {
+    "description": "Empty state - no extensions"
   },
   "extensionsNoExtensionsSubtitle": "Встановіть файли.mornye-ext, щоб додати нових провайдерів",
   "@extensionsNoExtensionsSubtitle": {
@@ -2618,6 +2904,36 @@
   "@libraryRemoveFolderMessage": {
     "description": "Confirmation shown before removing a library source"
   },
+  "libraryUnreadableFiles": "{count, plural, =1{1 file couldn't be read} other{{count} files couldn't be read}}",
+  "@libraryUnreadableFiles": {
+    "description": "Count of files the last scan of a library folder skipped because it could not read them",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryUnreadableFilesTitle": "Unreadable files",
+  "@libraryUnreadableFilesTitle": {
+    "description": "Title of the list of files a library scan could not read, and the action that opens it"
+  },
+  "libraryUnreadableFilesSubtitle": "These files were left out of your library. They may be damaged, still downloading, or blocked by the storage app.",
+  "@libraryUnreadableFilesSubtitle": {
+    "description": "Explanation above the list of files a library scan could not read"
+  },
+  "libraryUnreadableFilesAction": "See which files and why",
+  "@libraryUnreadableFilesAction": {
+    "description": "Subtitle of the library folder action that lists unreadable files"
+  },
+  "libraryUnreadableFilesMore": "{count, plural, =1{1 more file isn't listed} other{{count} more files aren't listed}}",
+  "@libraryUnreadableFilesMore": {
+    "description": "Note below the unreadable files list when the scan skipped more files than it lists",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "libraryShowDuplicateIndicator": "Показати індикатор дублікатів",
   "@libraryShowDuplicateIndicator": {
     "description": "Toggle for duplicate indicator in search"
@@ -2870,6 +3186,14 @@
   "@libraryFilterSortOldest": {
     "description": "Sort option - oldest first"
   },
+  "libraryFilterSortSizeLargest": "Size (Largest first)",
+  "@libraryFilterSortSizeLargest": {
+    "description": "Library sort option - largest files first"
+  },
+  "libraryFilterSortSizeSmallest": "Size (Smallest first)",
+  "@libraryFilterSortSizeSmallest": {
+    "description": "Library sort option - smallest files first"
+  },
   "libraryFilterSortAlbumAsc": "Альбом (A-Z)",
   "@libraryFilterSortAlbumAsc": {
     "description": "Sort option - album ascending"
@@ -3105,6 +3429,40 @@
   "libraryPlaybackNormalizationSubtitle": "Вирівнюйте гучність між треками, використовуючи теги ReplayGain або R128 за їх наявності",
   "@libraryPlaybackNormalizationSubtitle": {
     "description": "Subtitle explaining playback volume normalization"
+  },
+  "playbackNormalizationMode": "Gain mode",
+  "@playbackNormalizationMode": {
+    "description": "Label for choosing between track and album ReplayGain during playback"
+  },
+  "playbackNormalizationModeTrack": "Track",
+  "@playbackNormalizationModeTrack": {
+    "description": "Gain mode that levels every track on its own"
+  },
+  "playbackNormalizationModeAlbum": "Альбом",
+  "@playbackNormalizationModeAlbum": {
+    "description": "Gain mode that keeps the loudness differences inside an album"
+  },
+  "playbackNormalizationPreamp": "Pre-amp",
+  "@playbackNormalizationPreamp": {
+    "description": "Label for the dB offset applied on top of ReplayGain during playback"
+  },
+  "playbackNormalizationPreampValue": "{gain} dB (target {target} LUFS)",
+  "@playbackNormalizationPreampValue": {
+    "description": "Pre-amp value with the resulting target loudness",
+    "placeholders": {
+      "gain": {
+        "type": "String",
+        "example": "-7"
+      },
+      "target": {
+        "type": "String",
+        "example": "-25"
+      }
+    }
+  },
+  "playbackNormalizationPreampHint": "Lower values play quieter. Normalization only turns tracks down, so it never clips.",
+  "@playbackNormalizationPreampHint": {
+    "description": "Hint under the normalization pre-amp slider"
   },
   "cacheAudioAnalysis": "Кеш аудіо аналізу",
   "@cacheAudioAnalysis": {
@@ -3987,6 +4345,18 @@
   "@lyricsProviderLyricsPlusDesc": {
     "description": "Description for LyricsPlus provider"
   },
+  "lyricsProviderZarzLrcDesc": "Синхронізація послівного тексту Apple Music через Zarz-LRC",
+  "@lyricsProviderZarzLrcDesc": {
+    "description": "Description for the first-party Zarz-LRC provider"
+  },
+  "lyricsProviderLrcRedDesc": "Порядкові тексти Apple Music, синхронізовані із записом",
+  "@lyricsProviderLrcRedDesc": {
+    "description": "Description for lrc.red provider"
+  },
+  "lyricsProviderBetterLyricsDesc": "Синхронний текст популярних пісень в Apple Music",
+  "@lyricsProviderBetterLyricsDesc": {
+    "description": "Description for BetterLyrics provider, which only answers songs it has already cached"
+  },
   "lyricsProviderExtensionDesc": "Постачальник розширень",
   "@lyricsProviderExtensionDesc": {
     "description": "Generic description for extension-based lyrics providers"
@@ -4561,6 +4931,51 @@
   "@editMetadataAutoFillNoneSelected": {
     "description": "Snackbar when user taps Fetch without selecting any fields"
   },
+  "editMetadataLyricsSearch": "Find lyrics online",
+  "@editMetadataLyricsSearch": {
+    "description": "Button in the edit metadata lyrics section that searches every lyrics provider"
+  },
+  "lyricsPickerTitle": "Choose lyrics",
+  "@lyricsPickerTitle": {
+    "description": "Title of the sheet listing each lyrics provider's result"
+  },
+  "lyricsPickerNeedsTitle": "Enter a title and artist first",
+  "@lyricsPickerNeedsTitle": {
+    "description": "Snackbar when searching lyrics without a title or artist"
+  },
+  "lyricsPickerNoProviders": "No lyrics providers are enabled. Turn some on in Settings > Lyrics.",
+  "@lyricsPickerNoProviders": {
+    "description": "Shown in the lyrics picker when no provider is enabled"
+  },
+  "lyricsPickerWordSynced": "Word-synced",
+  "@lyricsPickerWordSynced": {
+    "description": "Lyrics result timed word by word"
+  },
+  "lyricsPickerSynced": "Synced",
+  "@lyricsPickerSynced": {
+    "description": "Lyrics result timed line by line"
+  },
+  "lyricsPickerPlain": "Plain text",
+  "@lyricsPickerPlain": {
+    "description": "Lyrics result without timing"
+  },
+  "lyricsPickerInstrumental": "Інструментальний",
+  "@lyricsPickerInstrumental": {
+    "description": "Lyrics result that marks the track as instrumental"
+  },
+  "lyricsPickerNotFound": "No lyrics found",
+  "@lyricsPickerNotFound": {
+    "description": "A lyrics provider returned nothing for this track"
+  },
+  "lyricsPickerLineCount": "{count, plural, =1{1 line} other{{count} lines}}",
+  "@lyricsPickerLineCount": {
+    "description": "Number of lyric lines in a provider's result",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "editMetadataFieldTitle": "Назва",
   "@editMetadataFieldTitle": {
     "description": "Chip label for title field in auto-fill selector"
@@ -4801,6 +5216,19 @@
   "@audioAnalysisRescan": {
     "description": "Tooltip/label for the button that re-runs the audio analysis, discarding cached results"
   },
+  "audioAnalysisSaveSpectrogram": "Save Spectrogram",
+  "@audioAnalysisSaveSpectrogram": {
+    "description": "Tooltip for the spectrogram button that saves the plot, with its axes and legend, as a PNG image the user places in storage"
+  },
+  "audioAnalysisSpectrogramSaved": "Spectrogram saved to {fileName}",
+  "@audioAnalysisSpectrogramSaved": {
+    "description": "Snackbar after the spectrogram image was saved",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
   "downloadRedownloadFakeHiRes": "Повторно завантажити підроблений Hi-Res",
   "@downloadRedownloadFakeHiRes": {
     "description": "Setting title: automatically replace downloads that measure as fake Hi-Res"
@@ -4932,6 +5360,14 @@
   "extensionsHomeFeedProvider": "Постачальник оновлень домашньої стрічки",
   "@extensionsHomeFeedProvider": {
     "description": "Extensions page - label for home feed provider selector"
+  },
+  "extensionsHomeFeedCountry": "Країна домашньої сторінки",
+  "@extensionsHomeFeedCountry": {
+    "description": "Country picker for the active Home feed extension"
+  },
+  "extensionsHomeFeedCountryDescription": "Головні рекомендації без VPN.",
+  "@extensionsHomeFeedCountryDescription": {
+    "description": "Help for choosing regional Home recommendations"
   },
   "extensionsHomeFeedDescription": "Виберіть, яке розширення показуватиме домашню стрічку на головному екрані",
   "@extensionsHomeFeedDescription": {
@@ -5182,6 +5618,10 @@
   "notifLibraryScanFailed": "Не вдалося сканувати бібліотеку",
   "@notifLibraryScanFailed": {
     "description": "Notification title when library scan fails"
+  },
+  "notifLibraryScanInterruptedBody": "Попереднє сканування бібліотеки було перервано. Скануйте теку знову, щоб продовжити. Індексовані треки все ще доступні.",
+  "@notifLibraryScanInterruptedBody": {
+    "description": "Recovery notice after the app stops during a library scan"
   },
   "notifLibraryScanCancelled": "Сканування бібліотеки скасовано",
   "@notifLibraryScanCancelled": {
@@ -6134,15 +6574,15 @@
   "@storeCategoryIntegration": {
     "description": "Store extension category - integration"
   },
-  "artistReleases": "Releases",
+  "artistReleases": "Релізи",
   "@artistReleases": {
     "description": "Section header for all artist releases"
   },
-  "editMetadataSelectNone": "None",
+  "editMetadataSelectNone": "Нічого",
   "@editMetadataSelectNone": {
     "description": "Button to clear selected fields for auto-fill"
   },
-  "queueRetryAllFailed": "Retry {count} failed",
+  "queueRetryAllFailed": "Повторити {count} невдалих спроб",
   "@queueRetryAllFailed": {
     "description": "Button to retry every failed download in the queue",
     "placeholders": {
@@ -6151,54 +6591,54 @@
       }
     }
   },
-  "settingsSaveDownloadHistory": "Save download history",
+  "settingsSaveDownloadHistory": "Зберігати історію завантажень",
   "@settingsSaveDownloadHistory": {
     "description": "Settings switch title for storing completed downloads in history"
   },
-  "settingsSaveDownloadHistorySubtitle": "Keep completed downloads in history and library views",
+  "settingsSaveDownloadHistorySubtitle": "Зберігати завершені завантаження в історії та бібліотеці",
   "@settingsSaveDownloadHistorySubtitle": {
     "description": "Settings switch subtitle for storing completed downloads in history"
   },
-  "dialogDisableHistoryTitle": "Turn off download history?",
+  "dialogDisableHistoryTitle": "Вимкнути історію завантажень?",
   "@dialogDisableHistoryTitle": {
     "description": "Confirmation dialog title shown before disabling download history"
   },
-  "dialogDisableHistoryMessage": "Existing history will be cleared. Downloaded files will not be deleted.",
+  "dialogDisableHistoryMessage": "Наявну історію буде очищено. Завантажені файли видалено не буде.",
   "@dialogDisableHistoryMessage": {
     "description": "Confirmation dialog message shown before disabling download history"
   },
-  "dialogDisableAndClear": "Turn off and clear",
+  "dialogDisableAndClear": "Вимкнути та очистити",
   "@dialogDisableAndClear": {
     "description": "Confirmation action to disable download history and clear existing entries"
   },
-  "openInOtherServices": "Open in Other Services",
+  "openInOtherServices": "Відкрити в інших сервісах",
   "@openInOtherServices": {
     "description": "Title and tooltip for finding the current collection in other services"
   },
-  "shareSheetNoExtensions": "No other compatible services",
+  "shareSheetNoExtensions": "Немає інших сумісних сервісів",
   "@shareSheetNoExtensions": {
     "description": "Empty state when no extensions can be searched for cross-service links"
   },
-  "shareSheetNotFound": "Not found",
+  "shareSheetNotFound": "Не знайдено",
   "@shareSheetNotFound": {
     "description": "Cross-service share sheet row subtitle when a service has no match"
   },
-  "shareSheetCopyLink": "Copy Link",
+  "shareSheetCopyLink": "Скопіювати посилання",
   "@shareSheetCopyLink": {
     "description": "Tooltip for copying a cross-service link"
   },
-  "shareSheetLinkCopied": "{service} link copied",
+  "shareSheetLinkCopied": "Посилання на {service} скопійовано",
   "@shareSheetLinkCopied": {
     "description": "Snackbar after copying a cross-service link",
     "placeholders": {
       "service": {}
     }
   },
-  "libraryPlayback": "Playback",
+  "libraryPlayback": "Відтворення",
   "@libraryPlayback": {
     "description": "Section header for playback settings in library settings"
   },
-  "libraryExternalPlayer": "External player",
+  "libraryExternalPlayer": "Зовнішній програвач",
   "@libraryExternalPlayer": {
     "description": "Setting option to use an external music player"
   },
@@ -6206,7 +6646,7 @@
   "@libraryExternalPlayerSubtitle": {
     "description": "Subtitle for external player option"
   },
-  "libraryBuiltInPreviewPlayer": "Built-in player",
+  "libraryBuiltInPreviewPlayer": "Вбудований програвач",
   "@libraryBuiltInPreviewPlayer": {
     "description": "Setting option to use the built-in preview player"
   },
@@ -6214,21 +6654,21 @@
   "@libraryBuiltInPreviewPlayerSubtitle": {
     "description": "Subtitle for built-in preview player option"
   },
-  "nowPlayingTitle": "Now Playing",
+  "nowPlayingTitle": "Зараз відтворюється",
   "@nowPlayingTitle": {
     "description": "Title for the now playing screen"
   },
-  "nowPlayingNothingPlaying": "Nothing is playing",
+  "nowPlayingNothingPlaying": "Нічого не відтворюється",
   "@nowPlayingNothingPlaying": {
     "description": "Empty state when no track is currently playing"
   },
-  "nowPlayingMinimize": "Minimize",
+  "nowPlayingMinimize": "Згорнути",
   "@nowPlayingMinimize": {
     "description": "Tooltip for minimizing the now playing screen"
   },
-  "nowPlayingUpNext": "Up next",
-  "nowPlayingAudioOutput": "Audio Output",
-  "nowPlayingWrittenBy": "Written by: {writers}",
+  "nowPlayingUpNext": "Далі",
+  "nowPlayingAudioOutput": "Аудіовихід",
+  "nowPlayingWrittenBy": "Написано: {writers}",
   "@nowPlayingWrittenBy": {
     "placeholders": {
       "writers": {
@@ -6236,7 +6676,7 @@
       }
     }
   },
-  "nowPlayingLyricsProvider": "Lyrics: {provider}",
+  "nowPlayingLyricsProvider": "Текст пісні: {provider}",
   "@nowPlayingLyricsProvider": {
     "placeholders": {
       "provider": {
@@ -6244,34 +6684,34 @@
       }
     }
   },
-  "concertGetTickets": "Get Tickets",
-  "concertSetList": "Concert Set List",
-  "concertSetListButton": "Set List",
-  "concertAddToCalendar": "Add to Calendar",
-  "concertOpenMaps": "Open Maps",
-  "concertDetailsUnavailable": "Concert details are currently unavailable.",
-  "concertCalendarUnavailable": "Unable to open the calendar.",
-  "nowPlayingAudioOutputUnavailable": "Unable to open audio output settings.",
+  "concertGetTickets": "Купити квитки",
+  "concertSetList": "Список пісень",
+  "concertSetListButton": "Перелік композицій",
+  "concertAddToCalendar": "Додати в календар",
+  "concertOpenMaps": "Відкрити карту",
+  "concertDetailsUnavailable": "Деталі концерту наразі недоступні.",
+  "concertCalendarUnavailable": "Неможливо відкрити календар.",
+  "nowPlayingAudioOutputUnavailable": "Не вдалося відкрити налаштування аудіовиходу.",
   "@nowPlayingUpNext": {
     "description": "Title for the playback queue sheet"
   },
-  "nowPlayingPreviousTrack": "Previous track",
+  "nowPlayingPreviousTrack": "Попередній трек",
   "@nowPlayingPreviousTrack": {
     "description": "Tooltip for the previous-track playback control"
   },
-  "nowPlayingNextTrack": "Next track",
+  "nowPlayingNextTrack": "Наступний трек",
   "@nowPlayingNextTrack": {
     "description": "Tooltip for the next-track playback control"
   },
-  "nowPlayingDetails": "Details",
+  "nowPlayingDetails": "Деталі",
   "@nowPlayingDetails": {
     "description": "Menu item and section title for track metadata details"
   },
-  "nowPlayingSleepTimer": "Sleep timer",
+  "nowPlayingSleepTimer": "Таймер сну",
   "@nowPlayingSleepTimer": {
     "description": "Menu item and sheet title for the playback sleep timer"
   },
-  "nowPlayingSleepTimerActive": "Ends at {time}",
+  "nowPlayingSleepTimerActive": "Вимкнення в {time}",
   "@nowPlayingSleepTimerActive": {
     "description": "Active sleep timer deadline shown in the player menu",
     "placeholders": {
@@ -6280,7 +6720,7 @@
       }
     }
   },
-  "nowPlayingSleepTimerMinutes": "{minutes, plural, =1{1 minute} other{{minutes} minutes}}",
+  "nowPlayingSleepTimerMinutes": "{minutes, plural, =1{1 хвилина} other{{minutes} хвилини}}",
   "@nowPlayingSleepTimerMinutes": {
     "description": "Duration choice for the playback sleep timer",
     "placeholders": {
@@ -6289,11 +6729,11 @@
       }
     }
   },
-  "nowPlayingSleepTimerOff": "Turn off sleep timer",
+  "nowPlayingSleepTimerOff": "Вимкнути Таймер сну",
   "@nowPlayingSleepTimerOff": {
     "description": "Action to cancel the active playback sleep timer"
   },
-  "nowPlayingSleepTimerSet": "Sleep timer set for {duration}",
+  "nowPlayingSleepTimerSet": "Таймер сну встановлено на {duration}",
   "@nowPlayingSleepTimerSet": {
     "description": "Confirmation after setting the playback sleep timer",
     "placeholders": {
@@ -6302,19 +6742,19 @@
       }
     }
   },
-  "nowPlayingSleepTimerCancelled": "Sleep timer turned off",
+  "nowPlayingSleepTimerCancelled": "Таймер сну вимкнено",
   "@nowPlayingSleepTimerCancelled": {
     "description": "Confirmation after cancelling the playback sleep timer"
   },
-  "nowPlayingOpenInExternalPlayer": "Open in external player",
+  "nowPlayingOpenInExternalPlayer": "Відкрити в зовнішньому програвачі",
   "@nowPlayingOpenInExternalPlayer": {
     "description": "Menu item to open the current track in an external player"
   },
-  "nowPlayingTabPlayer": "Player",
+  "nowPlayingTabPlayer": "Програвач",
   "@nowPlayingTabPlayer": {
     "description": "Tab label for the player view"
   },
-  "nowPlayingTabLyrics": "Lyrics",
+  "nowPlayingTabLyrics": "Тексти пісень",
   "@nowPlayingTabLyrics": {
     "description": "Tab label for the lyrics view"
   },
@@ -6333,6 +6773,14 @@
   "nowPlayingShowTranslation": "Показати переклад",
   "@nowPlayingNoLyrics": {
     "description": "Empty state when the playing file has no embedded lyrics"
+  },
+  "nowPlayingSearchLyricsOnline": "Пошук онлайн",
+  "@nowPlayingSearchLyricsOnline": {
+    "description": "Button in the player's empty lyrics state that looks up lyrics from the enabled lyrics providers"
+  },
+  "nowPlayingNoLyricsOnline": "Текст пісні не знайдено в мережі",
+  "@nowPlayingNoLyricsOnline": {
+    "description": "Empty state after an online lyrics search for the playing track found nothing"
   },
   "nowPlayingLibraryEmpty": "Ваша бібліотека порожня",
   "@nowPlayingLibraryEmpty": {
@@ -6425,37 +6873,20 @@
       }
     }
   },
-  "dialogCancel": "Скасувати",
-  "@dialogCancel": {
-    "description": "Dialog button - cancel action"
-  },
-  "dialogSave": "Зберегти",
-  "@dialogSave": {
-    "description": "Dialog button - save changes"
-  },
-  "dialogDelete": "Видалити",
-  "@dialogDelete": {
-    "description": "Dialog button - delete item"
-  },
-  "dialogRetry": "Повторити спробу",
-  "@dialogRetry": {
-    "description": "Dialog button - retry action"
-  },
-  "dialogClear": "Очистити",
-  "@dialogClear": {
-    "description": "Dialog button - clear items"
-  },
-  "dialogDone": "Готово",
-  "@dialogDone": {
-    "description": "Dialog button - action completed"
-  },
-  "dialogImport": "Імпорт",
-  "@dialogImport": {
-    "description": "Dialog button - import data"
-  },
-  "dialogDownload": "Завантажити",
-  "@dialogDownload": {
-    "description": "Confirm button in Download All dialog"
+  "trackConvertActionLabelLossy": "{sourceFormat} → {targetFormat} @ {bitrate}",
+  "@trackConvertActionLabelLossy": {
+    "description": "Convert button label for lossy conversion",
+    "placeholders": {
+      "sourceFormat": {
+        "type": "String"
+      },
+      "targetFormat": {
+        "type": "String"
+      },
+      "bitrate": {
+        "type": "String"
+      }
+    }
   },
   "aboutPaxsenixSubtitle": "Проксі для текстів пісень із Musixmatch, Netease, Apple Music, QQ Music, Spotify, Deezer, YouTube, Kugou та Genius",
   "@aboutPaxsenixSubtitle": {
@@ -6529,6 +6960,10 @@
   "trackConvertDitherTriangularHp": "Одиниця вимірювання ширини модуля",
   "@trackConvertDitherTriangularHp": {
     "description": "Lossless conversion high-pass triangular dither option"
+  },
+  "trackConvertResamplerSwr": "SWR",
+  "@trackConvertResamplerSwr": {
+    "description": "Lossless conversion default FFmpeg swresample resampler option"
   },
   "trackConvertResamplerSoxr": "SoXr",
   "@trackConvertResamplerSoxr": {
@@ -6604,6 +7039,14 @@
   "regionCountryUS": "Сполучені Штати Америки",
   "@regionCountryUS": {
     "description": "Country name for SongLink region picker"
+  },
+  "regionCountryIT": "Італія",
+  "@regionCountryIT": {
+    "description": "Country name for Italy"
+  },
+  "regionCountryES": "Іспанія",
+  "@regionCountryES": {
+    "description": "Country name for Spain"
   },
   "regionCountryGB": "Великобританія",
   "@regionCountryGB": {
@@ -6706,6 +7149,10 @@
   "@extensionVerificationCopyLink": {
     "description": "Button to copy the extension verification URL"
   },
+  "extensionVerificationPasteCallback": "Paste callback",
+  "@extensionVerificationPasteCallback": {
+    "description": "Button that completes extension verification from a callback URL in the clipboard"
+  },
   "extensionVerificationLinkCopied": "Посилання для підтвердження скопійовано",
   "@extensionVerificationLinkCopied": {
     "description": "Snackbar after copying the extension verification URL"
@@ -6734,6 +7181,33 @@
   "libraryFilterMetadataMissingReplayGain": "Відсутній ReplayGain",
   "@libraryFilterMetadataMissingReplayGain": {
     "description": "Filter option for scanned tracks without ReplayGain gain tags"
+  },
+  "libraryFilterMetadataHasReplayGain": "Вирівнювання гучності",
+  "@libraryFilterMetadataHasReplayGain": {
+    "description": "Filter option for tracks with indexed ReplayGain track or album gain tags"
+  },
+  "libraryFilterIncompleteAlbums": "Неповні альбоми",
+  "@libraryFilterIncompleteAlbums": {
+    "description": "Library filter for albums with confirmed missing track positions"
+  },
+  "libraryAlbumCompletenessUnknown": "Невідомо, чи альбом повний",
+  "@libraryAlbumCompletenessUnknown": {
+    "description": "Library filter and status for missing, conflicting or ambiguous album track counts"
+  },
+  "libraryAlbumMissingTracks": "{present}/{expected} треки · {missing} відсутні",
+  "@libraryAlbumMissingTracks": {
+    "description": "Album completeness badge tooltip",
+    "placeholders": {
+      "present": {
+        "type": "int"
+      },
+      "expected": {
+        "type": "int"
+      },
+      "missing": {
+        "type": "int"
+      }
+    }
   },
   "trackOptionCopyTrackName": "Копіювати назву треку",
   "@trackOptionCopyTrackName": {
@@ -6779,11 +7253,54 @@
     "description": "Selected state of the compact favorite action"
   },
   "autoMixDescription": "Поєднуйте композиції за допомогою синхронізації ритму та зміни темпу зі збереженням висоти тону. Використовує плавний перехід crossfade, якщо синхронізація ритму неможлива.",
+  "playerCoverStyle": "Обкладинка",
+  "@playerCoverStyle": {
+    "description": "Settings section choosing how the player shows cover art"
+  },
+  "playerCoverStyleDefault": "За замовчуванням",
+  "@playerCoverStyleDefault": {
+    "description": "Cover art style: artwork card above the controls"
+  },
+  "playerCoverStyleDefaultDescription": "Обкладинка над кнопками керування",
+  "@playerCoverStyleDefaultDescription": {
+    "description": "Subtitle of the default cover art style"
+  },
+  "playerCoverStyleFullScreen": "На весь екран",
+  "@playerCoverStyleFullScreen": {
+    "description": "Cover art style: artwork fills the top of the player"
+  },
+  "playerCoverStyleFullScreenDescription": "Обкладинка заповнює верх програвача та розмивається. Анімована обкладинка у Mornye завжди на весь екран",
+  "@playerCoverStyleFullScreenDescription": {
+    "description": "Subtitle of the full screen cover art style"
+  },
+  "musicHaptics": "Музичний відгук",
+  "@musicHaptics": {
+    "description": "Setting that vibrates the phone along with the music"
+  },
+  "musicHapticsDescription": "Вібрація в такт завантажених та локальних пісень",
+  "@musicHapticsDescription": {
+    "description": "Subtitle of the music haptics setting"
+  },
+  "musicHapticsSensitivity": "Sensitivity",
+  "@musicHapticsSensitivity": {
+    "description": "Slider for how many beats trigger music haptics; higher values vibrate on softer hits"
+  },
+  "musicHapticsStrength": "Strength",
+  "@musicHapticsStrength": {
+    "description": "Slider for how strongly the phone vibrates with music haptics"
+  },
   "autoMixOn": "Автомікс увімкнено",
   "autoMixOff": "Автомікс вимкнено",
   "autoplayOn": "Автовідтворення увімкнено",
   "autoplayOff": "Автовідтворення вимкнено",
   "autoplayFromLibrary": "Автовідтворення з вашої бібліотеки",
+  "autoplayDescription": "Продовжувати відтворення схожих пісень із вашої бібліотеки, коли черга закінчиться.",
+  "autoplayPersonalization": "Персоналізований автозапуск",
+  "autoplayPersonalizationDescription": "Навчайтеся на основі пісень, які ви слухаєте та пропускаєте, приватно на цьому пристрої. Вимкнення цієї функції зупинить навчання та відновить звичайне автовідтворення.",
+  "autoplayResetLearning": "Скинути налаштування рекомендацій",
+  "autoplayResetLearningConfirmTitle": "Скинути налаштування рекомендацій?",
+  "autoplayResetLearningConfirmMessage": "Автовідтворення скидає історію ваших прослуховувань і пропускає треки. Цю дію не можна скасувати.",
+  "autoplayResetLearningConfirm": "Скинути",
   "profileTitle": "Профіль",
   "profileSetUp": "Налаштуйте свій профіль",
   "profileEdit": "Редагувати ім'я та фотографію",
@@ -6794,11 +7311,705 @@
   "profileRemovePhoto": "Видалити фото",
   "profilePhotoError": "Виберіть коректне зображення менш як 20 Mb.",
   "profileSaveError": "Не вдалося зберегти ваш профіль. Будь ласка, спробуйте ще раз.",
+  "homeGreetingMorning1": "Доброго ранку",
+  "homeGreetingMorning2": "Прокидайся і співай",
+  "homeGreetingMorning3": "Почати спочатку",
+  "homeGreetingAfternoon1": "Доброго дня",
+  "homeGreetingAfternoon2": "Денний ритм",
+  "homeGreetingAfternoon3": "Не збавляй обертів",
+  "homeGreetingEvening1": "Доброго вечора",
+  "homeGreetingEvening2": "Час відпочити",
+  "homeGreetingEvening3": "Золотий час",
+  "homeGreetingNight1": "Доброї ночі",
+  "homeGreetingNight2": "Нічний сеанс",
+  "homeGreetingNight3": "Режим тиші",
+  "homeGreetingNamed": "{greeting}, {name}",
+  "@homeGreetingNamed": {
+    "description": "Home greeting followed by the first name from the user's profile",
+    "placeholders": {
+      "greeting": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "homeTaglineListening": "Що слухаємо?",
+  "@homeTaglineListening": {
+    "description": "Rotating Home prompt under the greeting"
+  },
+  "homeTaglineLink": "Маєте посилання? Вставте його в пошук",
+  "@homeTaglineLink": {
+    "description": "Rotating Home prompt explaining that links can be pasted into search"
+  },
+  "homeTaglineDiscover": "Шукайте наступний улюблений альбом",
+  "@homeTaglineDiscover": {
+    "description": "Rotating Home prompt under the greeting"
+  },
+  "homeContinueListening": "Продовжити відтворення",
+  "@homeContinueListening": {
+    "description": "Home section header for the track currently loaded in the player"
+  },
+  "homeRecentlyAdded": "Нещодавно додані",
+  "@homeRecentlyAdded": {
+    "description": "Home section header for the newest downloaded and scanned tracks"
+  },
+  "homeOnRepeat": "На повторі",
+  "@homeOnRepeat": {
+    "description": "Home section header for the most played tracks of the last four weeks"
+  },
+  "homeShortcuts": "Швидкі команди",
+  "@homeShortcuts": {
+    "description": "Home section header for quick links to player tools"
+  },
   "artistUpcomingConcerts": "Майбутні концерти",
   "artistAllUpcomingConcerts": "Всі майбутні концерти",
   "artistNoUpcomingConcerts": "Немає майбутніх концертів.",
+  "motionArtwork": "Анімована обкладинка",
+  "listeningStats": "Статистика прослуховувань",
+  "listeningStatsRecord": "Запис прослуховувань",
+  "listeningStatsDescription": "Зберігається лише на цьому пристрої, починаючи відтепер. Враховується лише вбудований програвач; паузи, буферизація та перемотування не додають часу прослуховування. Прослуховування зараховується після 30 секунд.",
+  "listeningStatsEmpty": "Увімкніть музику у вбудованому програвачі, щоб розпочати підсумок вашого прослуховування. Попередні прослуховування відновити неможливо.",
+  "listeningStatsDays": "{days} Дні",
+  "@listeningStatsDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningStatsMinutes": "{minutes} Хв",
+  "@listeningStatsMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningStatsTotals": "{plays, plural, =1{1 відтворення} other{{plays} відтворень}} · {tracks, plural, =1{1 трек} other{{tracks} треків}} · {days, plural, =1{1 активний день} other{{days} активні дні}}",
+  "@listeningStatsTotals": {
+    "placeholders": {
+      "plays": {
+        "type": "int"
+      },
+      "tracks": {
+        "type": "int"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningStatsPreviousYear": "Попередній рік",
+  "listeningStatsNextYear": "Наступний рік",
+  "listeningStatsActivity": "Останні дні прослуховування · хвилини",
+  "listeningStatsTopArtists": "Топ виконавці",
+  "listeningStatsTopTracks": "Найкращі треки",
+  "listeningStatsLoadError": "Не вдалося завантажити статистику прослуховувань",
+  "listeningStatsClear": "Очистити статистику прослуховувань",
+  "listeningStatsClearError": "Не вдалося очистити статистику прослуховування. Будь ласка, спробуйте ще раз.",
+  "listeningStatsClearDescription": "Видалити всю статистику прослуховувань на цьому пристрої? Ваша музика та списки треків збережуться.",
+  "libraryArtistsEmpty": "Виконавці з’являться тут, щойно ви завантажите музику або проскануєте локальну бібліотеку.",
+  "listeningRewind": "Перемотати назад",
+  "listeningRewindDescription": "Найцікавіше за останні місяці",
+  "listeningRewindChoosePeriod": "Оберіть період",
+  "listeningRewindLastWeeks": "Останні {weeks} тижні",
+  "@listeningRewindLastWeeks": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindLastMonths": "За останній {months} місяці",
+  "@listeningRewindLastMonths": {
+    "placeholders": {
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindThisYear": "За весь {year} рік",
+  "@listeningRewindThisYear": {
+    "placeholders": {
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindIntroTitle": "Ваш підсумок",
+  "listeningRewindIntroBody": "Огляд того, що ви відтворювали з {start} по {end}.",
+  "@listeningRewindIntroBody": {
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "listeningRewindMinutesTitle": "Ви слухали",
+  "listeningRewindMinutesUnit": "{minutes, plural, =1 {хвилина} one {# хвилина} few {# хвилини} many {# хвилин} other {# хвилини}}",
+  "@listeningRewindMinutesUnit": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindHours": "{hours, plural, =1{Це приблизно 1 година музики} other{Це приблизно {hours} годин музики}}",
+  "@listeningRewindHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindMore": "На {percent}% більше, ніж за попередній період",
+  "@listeningRewindMore": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindLess": "На {percent}% менше, ніж за попередній період",
+  "@listeningRewindLess": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindSame": "Приблизно так само, як за попередній період",
+  "listeningRewindTopArtistTitle": "Ваш найкращий виконавець",
+  "listeningRewindArtistShare": "{percent}% від вашого часу прослуховування",
+  "@listeningRewindArtistShare": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindArtistsTitle": "Чергування виконавців",
+  "listeningRewindTopTrackTitle": "Ваш найкраща пісня",
+  "listeningRewindPlays": "{plays, plural, =1{1 відтворювався} other{{plays} відтворювались}}",
+  "@listeningRewindPlays": {
+    "placeholders": {
+      "plays": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindTracksTitle": "Часто прослуховувані",
+  "listeningRewindTopAlbumTitle": "Твій улюблений альбом",
+  "listeningRewindNewArtistsTitle": "Нові відкриття",
+  "listeningRewindNewArtistsBody": "{count, plural, =1{Знайдено 1 нового виконавця} other{Знайдено {count} нов. виконавця ці ців}}",
+  "@listeningRewindNewArtistsBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindRhythmTitle": "Темп прослуховування",
+  "listeningRewindPeakDay": "Найактивніший день",
+  "listeningRewindFavoriteDay": "Улюблений день",
+  "listeningRewindStreak": "Рекордна серія",
+  "listeningRewindStreakDays": "{days, plural, =1{1 день} other{{days} днів підряд}}",
+  "@listeningRewindStreakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindReplayTitle": "Не міг відірватися",
+  "listeningRewindReplayBody": "Ви відтворили це {plays} разів {date}",
+  "@listeningRewindReplayBody": {
+    "placeholders": {
+      "plays": {
+        "type": "int"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "listeningRewindOutroTitle": "Твій підсумок",
+  "listeningRewindOutroBody": "Слухай далі! Твій наступний Спогад уже готується.",
+  "listeningRewindEmpty": "За цей період ви прослухали замало треків. Запустіть щось у вбудованому програвачі та завітайте сюди згодом.",
+  "listeningRewindLoadError": "Не вдалося завантажити ваш Спогад",
+  "listeningRewindSlide": "Слайд {index} із {count}",
+  "@listeningRewindSlide": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindShare": "Поділитися",
+  "listeningRewindShareError": "Помилка під час поширення вашого Спогаду",
+  "listeningRewindNext": "Далі",
+  "listeningRewindPrevious": "Назад",
+  "listeningRewindMonthlyReady": "Ваш підсумок за останні 4 тижні готовий до перегляду",
+  "listeningRewindYearTitle": "Ваш {year} в музиці",
+  "@listeningRewindYearTitle": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "listeningRewindYearEyebrow": "Підсумки року",
+  "listeningRewindYearBanner": "Твої найкращі виконавці, пісні та моменти року",
+  "listeningRewindYearIntroBody": "Усе, що ви слухали цього року: від першої пісні до найактивнішого місяця.",
+  "listeningRewindNumbersTitle": "Підсумки року в цифрах",
+  "listeningRewindSongsLabel": "Пісні",
+  "listeningRewindArtistsLabel": "Виконавці",
+  "listeningRewindAlbumsLabel": "Альбоми",
+  "listeningRewindDaysLabel": "Дні з музикою",
+  "listeningRewindDaysShare": "З музикою {percent}% ваших днів",
+  "@listeningRewindDaysShare": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindMonthsTitle": "Помісячно",
+  "listeningRewindBiggestMonthLabel": "Піковий місяць",
+  "listeningRewindBiggestMonth": "Ваш піковий місяць: {month}",
+  "@listeningRewindBiggestMonth": {
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "listeningRewindMonthlyArtistsTitle": "Виконавець місяця",
+  "listeningRewindLoyalTitle": "Завжди поруч",
+  "listeningRewindLoyalBody": "{days, plural, =1{Разом із вами 1 день} other{З вами протягом {days} різних днів}}",
+  "@listeningRewindLoyalBody": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "listeningRewindFirstSongTitle": "З чого почався твій рік",
+  "listeningRewindFirstSongBody": "Пісня, яку ви найбільше слухали в перший день, {date}",
+  "@listeningRewindFirstSongBody": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "listeningRewindYearOutroTitle": "Це був ваш {year}",
+  "@listeningRewindYearOutroTitle": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "listeningRewindYearOutroBody": "Ще один рік чудової музики.",
+  "weeklyReleases": "Нові релізи",
+  "weeklyReleasesDescription": "Нещодавні альбоми та сингли від ваших улюблених виконавців, надані встановленими розширеннями метаданих.",
+  "weeklyReleasesEmpty": "Не знайдено жодного релізу за цей час. Додайте своїх улюблених артистів або спробуйте збільшити період пошуку.",
+  "weeklyReleasesUnavailable": "Не вдалося перевірити деяких виконавців, тому їхні збережені результати залишено. Провайдери можуть не надавати каталоги виконавців або точні дати релізів.",
+  "weeklyReleasesLoadError": "Не вдалося перевірити нові релізи. Потягніть, щоб оновити.",
+  "motionArtworkDescription": "Анімовані обкладинки надаються провайдерами метаданих. Вимкніть, щоб використовувати статичні зображення та економити заряд батареї.",
+  "libraryLoading": "Завантаження бібліотеки…",
+  "libraryLoadFailed": "Не вдалося завантажити бібліотеку. Спробуйте знову завантажити збережені теки та індекс треків.",
+  "discordPresenceDescription": "Показуйте назву, виконавця, альбом і прогрес відтворення музики, яка грає у вбудованому програвачі у вашому профілі Discord. Локальні аудіофайли та обкладинки ніколи не завантажуються [в мережу]. Очищається, коли відтворення призупиняється або зупиняється.",
+  "discordPresenceDisabled": "Вимкнено",
+  "discordPresenceLink": "Прив’язати обліковий запис Discord",
+  "discordPresenceConnecting": "Підключення до Discord…",
+  "discordPresenceReady": "Готовий, коли грає музика",
+  "discordPresenceActive": "Поширити поточний трек",
+  "discordPresenceUnavailable": "Discord зараз недоступний. Спробуємо під'єднатися знову під час відтворення.",
+  "discordPresenceBuildUnavailable": "Discord SDK недоступний у цій версії програми.",
+  "discordPresenceAndroidHelp": "Встановіть Discord і увійдіть у свій обліковий запис на цьому телефоні. Дозвольте поширення статусу активності в Discord. Зовнішні програвачі не підтримуються.",
+  "discordPresenceIosHelp": "Прив’яжіть свій обліковий запис через Discord і дозвольте поширення статусів активності. Якщо не вдалося пройти авторизацію, торкніться, щоб спробувати знову.",
+  "discordPresenceDesktopHelp": "Keep the Discord desktop app running and signed in on this computer, and allow activity sharing in Discord.",
+  "discordPresenceDisconnect": "Від’єднати та видалити обліковий запис",
+  "autoMixSettingsTitle": "Поєднання переходів",
+  "autoMixAutomaticDuration": "Автоматична тривалість",
+  "autoMixDuration": "Тривалість змішування",
+  "autoMixEffect": "Ефект переходу",
+  "autoMixEffectAuto": "Авто",
+  "autoMixEffectCrossfade": "Плавний перехід",
+  "autoMixEffectMuffled": "Приглушений",
+  "autoMixEffectEcho": "Ехо",
+  "autoMixEffectPitch": "Висота",
+  "autoMixEffectCustom": "Власний",
+  "autoMixEffectsHelp": "Ефекти застосовуються до завершальної частини попередньої композиції під час зведення. Для коротких композицій використовується коротший інтервал накладання.",
+  "autoMixSpeed": "Швидкість",
+  "autoMixPitch": "Висота тону (в півтонах)",
+  "autoMixEcho": "Ехо",
+  "autoMixLowPass": "Заглушений фільтр",
+  "autoMixMixing": "Змішування",
+  "autoMixCrossfading": "Плавний перехід",
+  "playbackAutomation": "Автовідтворення",
+  "playbackPauseOnMute": "Ставити на паузу, коли звук вимкнено",
+  "snackbarPlaybackMuted": "Гучність мультимедіа дорівнює нулю. Відтворення зупинено. Натисніть «Відтворити» знову, щоб продовжити.",
+  "@snackbarPlaybackMuted": {
+    "description": "Shown after mute automation pauses playback; another explicit play request can override the pause."
+  },
+  "playbackPauseOnMuteDescription": "Призупиняти при нульовій гучності медіа та відновлювати при її збільшенні. Ручні паузи зберігаються. Тільки стандартний аудіовихід.",
+  "playbackOnHeadphonesConnected": "Відтворювати після підключення навушників",
+  "playbackOnHeadphonesConnectedDescription": "Відновлювати відтворення поточної пісні під час підключення дротових або Bluetooth-навушників. Відключення призупиняє відтворення. Тільки для вбудованого програвача.",
+  "appearanceCustomFont": "Користувацький шрифт",
+  "appearanceCustomFontSubtitle": "Імпорт файлу TTF або OTF (до 10 МБ). Перевизначає шрифт теми та системи.",
+  "appearanceCustomFontInvalid": "Не вдалося завантажити цей шрифт. Виберіть дійсний файл формату TTF або OTF розміром до 10 МБ.",
+  "appearanceCustomFontReset": "Використовуйте шрифт теми",
+  "equalizerTitle": "Еквалайзер",
+  "equalizerDescription": "5–31 Смуговий, Тембр, Передпідсилювач / Динаміка",
+  "equalizerEnable": "Увімкнути еквалайзер",
+  "equalizerBands": "Смуги",
+  "equalizerTone": "Тембр і Стерео",
+  "equalizerPreamp": "Передпідсилювач",
+  "equalizerBass": "Низькі частоти",
+  "equalizerTreble": "Високі частоти",
+  "equalizerBalance": "Баланс",
+  "equalizerDynamics": "Динаміка",
+  "equalizerHeadroom": "Автозапас за рівнем",
+  "equalizerHeadroomDescription": "Зменшує вхідне підсилення, щоб уникнути перевантаження при підсиленні частот.",
+  "equalizerLimiter": "Піковий обмежувач",
+  "equalizerLimiterDescription": "Обмежуйте піки до −0.5 dBFS для захисту від перевантаження.",
+  "equalizerCompressor": "Компресор",
+  "equalizerCompressorDescription": "Зменшує різницю між тихими та гучними звуками.",
+  "equalizerThreshold": "Поріг",
+  "equalizerRatio": "Стиснення",
+  "equalizerAttack": "Атака",
+  "equalizerRelease": "Відновлення",
+  "equalizerPresets": "Шаблони",
+  "equalizerSavePreset": "Зберегти шаблон",
+  "equalizerPresetName": "Назва шаблону",
+  "equalizerImport": "Імпортувати шаблон",
+  "equalizerExport": "Поділитися шаблоном",
+  "equalizerImportInvalid": "Choose a valid Mornye equalizer preset (JSON, up to 64 KB).",
+  "equalizerSaved": "Шаблон збережено",
+  "equalizerResetTitle": "Скинути еквалайзер?",
+  "equalizerResetDescription": "Повернення до плоскої кривої, стандартного тембру та динаміки. Збережені шаблони залишаться.",
+  "equalizerBypass": "Режими Bit-perfect, Direct USB та ексклюзивний вивід Hi-Res обходять еквалайзер. Вимкніть Bit-perfect, щоб увімкнути еквалайзер. Зовнішні програвачі керують власними ефектами.",
+  "equalizerCurve": "Крива EQ (розрахункова)",
+  "equalizerCurveDescription": "Крива зображає підсилення смуг; точний результат залежить від рушія відтворення.",
+  "equalizerEffectivePreamp": "Вхідне підсилення після автозапасу",
+  "equalizerDeletePreset": "Видалити шаблон",
+  "equalizerCustom": "Власний",
+  "equalizerManagePresets": "Керування шаблонами",
+  "lyricsShareTitle": "Поділитися текстом пісні",
+  "@lyricsShareTitle": {
+    "description": "Screen that turns selected lyric lines into an image for stories"
+  },
+  "lyricsShareSelectHint": "Виберіть до {count} рядків",
+  "@lyricsShareSelectHint": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "lyricsShareLimit": "Ви можете поділитися до {count} рядків",
+  "@lyricsShareLimit": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "lyricsShareAction": "Поділитися",
+  "lyricsShareError": "Не вдалося створити зображення з текстом пісні",
+  "lyricsShareBackgroundArtwork": "Обкладинка",
+  "lyricsShareBackgroundColor": "Колір обкладинки",
+  "lyricsShareBackgroundDark": "Темна",
+  "lyricsShareBackgroundLight": "Світла",
+  "audioInfoTitle": "Інформація про аудіо",
+  "@audioInfoTitle": {
+    "description": "Sheet with technical details of the playing track, opened from the quality badge"
+  },
+  "audioInfoSource": "Вихідний файл",
+  "audioInfoSignal": "Сигнал",
+  "audioInfoLoudness": "Гучність",
+  "audioInfoProcessing": "Обробка даних",
+  "audioInfoOutput": "Вивід",
+  "audioInfoAnalysis": "Аналіз спектра та рівня",
+  "audioInfoQuality": "Якість",
+  "audioInfoHiResLossless": "Hi-Res Lossless",
+  "audioInfoLossless": "Lossless",
+  "audioInfoLossy": "Lossy",
+  "audioInfoFormat": "Формат",
+  "audioInfoCodec": "Кодек",
+  "audioInfoSampleRate": "Частота дискретизації",
+  "audioInfoBitDepth": "Розрядність",
+  "audioInfoChannels": "Канали",
+  "audioInfoChannelCount": "{count, plural, =1{Моно} =2{Стерео} other{{count} канали}}",
+  "@audioInfoChannelCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "audioInfoBitrate": "Швидкість потоку",
+  "audioInfoDuration": "Тривалість",
+  "audioInfoFileSize": "Розмір файлу",
+  "audioInfoCompression": "Компресія",
+  "audioInfoCompressionValue": "{percent}% від початкового розміру",
+  "@audioInfoCompressionValue": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "audioInfoLocation": "Розташування",
+  "audioInfoLocationLocal": "Пам’ять пристрою",
+  "audioInfoLocationShared": "Загальна тека",
+  "audioInfoLocationNetwork": "Мережеве сховище",
+  "audioInfoPcmRate": "Швидкість нестиснених даних",
+  "audioInfoFrequencyRange": "Частотний діапазон",
+  "audioInfoFrequencyRangeValue": "До {frequency} (Nyquist)",
+  "@audioInfoFrequencyRangeValue": {
+    "placeholders": {
+      "frequency": {
+        "type": "String"
+      }
+    }
+  },
+  "audioInfoDynamicRange": "Теоретичний динамічний діапазон",
+  "audioInfoTrackGain": "Підсилення треку",
+  "audioInfoTrackPeak": "Пік треку",
+  "audioInfoAlbumGain": "Підсилення альбому",
+  "audioInfoAlbumPeak": "Пік альбому",
+  "audioInfoNoGainTags": "Теги ReplayGain відсутні",
+  "audioInfoApplied": "Застосовано: {gain}",
+  "@audioInfoApplied": {
+    "placeholders": {
+      "gain": {
+        "type": "String"
+      }
+    }
+  },
+  "audioInfoOn": "Увімкнути",
+  "audioInfoOff": "Вимкнути",
+  "audioInfoBypassed": "В обхід через прямий вивід",
+  "audioInfoPlayer": "Програвач",
+  "audioInfoPlayerValue": "Mornye built-in player",
+  "audioInfoSignalPath": "Шлях сигналу",
+  "audioInfoPathSystem": "Системний мікшер",
+  "audioInfoPathDirect": "Direct USB, в обхід системного мікшера",
+  "audioInfoPathExclusive": "Ексклюзивний вивід, в обхід системного мікшера",
+  "audioInfoDecoder": "Декодер",
+  "audioInfoHardware": "Апаратне забезпечення",
+  "audioInfoSoftware": "Програмне забезпечення",
+  "audioInfoBands": "{count} Смуг",
+  "@audioInfoBands": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "audioInfoTempo": "Темп",
+  "audioInfoResampling": "Передискретизація",
+  "audioInfoResamplingNone": "Немає, частоти збігаються",
+  "audioInfoBitPerfect": "Bit-perfect",
+  "audioInfoBitPerfectActive": "Так, семпли без змін",
+  "audioInfoBitPerfectNo": "Ні, змішано системою",
+  "audioInfoDevice": "Пристрій",
+  "audioInfoDeviceType": "{type, select, speaker{Динамік смартфона} earpiece{Розмовний динамік} wired_headphones{Дротові навушники} wired_headset{Дротова гарнітура} line{Лінійний вихід} bluetooth{Bluetooth} bluetooth_le{Bluetooth LE Audio} usb{USB аудіо} usb_headset{USB гарнітура} hdmi{HDMI} dock{Док-станція} cast{Трансляція} hearing_aid{Слуховий апарат} airplay{AirPlay} car{Автомобільна аудіосистема} other{Інше}}",
+  "@audioInfoDeviceType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "audioInfoOutputRate": "Вихідна частота дискретизації",
+  "audioInfoOutputFormat": "Вихідний формат",
+  "audioInfoDeviceRates": "Частоти дискретизації пристрою",
+  "audioInfoDeviceFormats": "Формати пристрою",
+  "audioInfoAnyRate": "Усі",
+  "audioInfoBuffer": "Буфер мікшера",
+  "audioInfoLatency": "Вихідна затримка",
+  "audioInfoLowLatency": "Аудіо з низькою затримкою",
+  "audioInfoProAudio": "Професійне аудіо",
+  "audioInfoSupported": "Підтримується",
+  "audioInfoNotSupported": "Не підтримується",
+  "audioInfoSpatial": "Просторовий звук",
+  "audioInfoHeadTracking": "Відстеження рухів голови",
+  "audioInfoUnavailable": "Недоступно",
+  "audioInfoFixedVolume": "Керується пристроєм",
+  "audioInfoCopy": "Копіювати звіт",
+  "audioInfoCopied": "Інформацію про аудіо скопійовано",
+  "lyricsTextSize": "Розмір тексту пісні",
+  "lyricsTextPreview": "Слідкуйте за кожним рядком своєї улюбленої пісні",
+  "appCrashTitle": "Застосунок завершив роботу з помилкою",
+  "appAnrTitle": "The app previously stopped responding",
+  "@appAnrTitle": {
+    "description": "Title for an Android ANR report, distinct from a crash."
+  },
+  "appAnrMessage": "A diagnostic report was saved. You can copy it and send it to the developer to help investigate.",
+  "@appAnrMessage": {
+    "description": "Message shown for an Android process exit due to an ANR."
+  },
+  "appCrashMessage": "Звіт про збій збережено. Скопіюйте його та надішліть розробнику, щоб допомогти у розв'язання проблеми.",
+  "appCrashDetails": "Переглянути помилку та журнал",
+  "appCrashCopy": "Скопіювати звіт для розробника",
+  "appCrashDismiss": "Відхилити",
+  "appCrashCopyFailed": "Не вдалося скопіювати звіт про збій. Будь ласка, спробуйте ще раз.",
+  "appCrashDismissFailed": "Не вдалося закрити звіт про збій. Будь ласка, спробуйте ще раз.",
   "optionsEmbeddedCoverSizeOriginal": "Вихідна роздільна здатність",
   "@optionsEmbeddedCoverSizeOriginal": {
     "description": "Option that preserves the provider artwork at its original resolution"
+  },
+  "desktopShortcutTooltip": "{action} ({shortcut})",
+  "@desktopShortcutTooltip": {
+    "description": "Desktop tooltip that names an action and its keyboard shortcut, for example 'Next track (Ctrl+Right)'",
+    "placeholders": {
+      "action": {
+        "type": "String"
+      },
+      "shortcut": {
+        "type": "String"
+      }
+    }
+  },
+  "desktopPlayerIdle": "Not playing",
+  "@desktopPlayerIdle": {
+    "description": "Desktop player bar text when no track is loaded"
+  },
+  "desktopVolumeUp": "Increase volume",
+  "desktopVolumeDown": "Decrease volume",
+  "desktopTableSortedAscending": "{column}, sorted ascending",
+  "@desktopTableSortedAscending": {
+    "description": "Screen reader label of a song table column header that sorts the table A to Z",
+    "placeholders": {
+      "column": {
+        "type": "String"
+      }
+    }
+  },
+  "desktopTableSortedDescending": "{column}, sorted descending",
+  "@desktopTableSortedDescending": {
+    "description": "Screen reader label of a song table column header that sorts the table Z to A",
+    "placeholders": {
+      "column": {
+        "type": "String"
+      }
+    }
+  },
+  "desktopMenuOpen": "Open",
+  "@desktopMenuOpen": {
+    "description": "Context menu item that opens an album, artist, playlist or folder"
+  },
+  "desktopMenuShowDetails": "Show details",
+  "@desktopMenuShowDetails": {
+    "description": "Context menu item that opens a track's metadata page"
+  },
+  "desktopDropToImport": "Drop to add to your library",
+  "@desktopDropToImport": {
+    "description": "Overlay shown while music files or folders are dragged over the desktop window"
+  },
+  "desktopDropImported": "Adding {count} {count, plural, =1{folder} other{folders}} to your library",
+  "@desktopDropImported": {
+    "description": "Snackbar after dropping music onto the desktop window; the folders are scanned into the library",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "desktopDropNothingToImport": "Drop music files or folders to add them to your library",
+  "@desktopDropNothingToImport": {
+    "description": "Snackbar when the dropped items contain no folders or audio files"
+  },
+  "desktopAllPlaylists": "All Playlists",
+  "@desktopAllPlaylists": {
+    "description": "Desktop sidebar row that opens the list of every playlist"
+  },
+  "desktopMenuSettings": "Settings…",
+  "@desktopMenuSettings": {
+    "description": "macOS app menu item that opens Settings"
+  },
+  "desktopMenuFile": "File",
+  "desktopMenuEdit": "Edit",
+  "desktopMenuView": "View",
+  "desktopWindowMode": "Window mode",
+  "desktopWindowed": "Windowed",
+  "desktopWindowFullscreen": "На весь екран",
+  "desktopWindowBorderless": "Borderless",
+  "desktopExitFullscreen": "Exit full screen",
+  "desktopMinimizeWindow": "Minimize window",
+  "desktopZoomWindow": "Maximize or restore window",
+  "desktopWindowModeUnavailable": "The window mode could not be changed. Try again after the current window transition finishes.",
+  "desktopMenuControls": "Controls",
+  "desktopMenuWindow": "Window",
+  "desktopMenuHelp": "Help",
+  "desktopMenuPlayPause": "Play/Pause",
+  "desktopMenuMiniPlayer": "Mini Player",
+  "@desktopMenuMiniPlayer": {
+    "description": "Window menu item, player bar button and Keyboard Shortcuts row that shrink the window into a small player floating above other windows"
+  },
+  "desktopMiniPlayerExpand": "Show Full Window",
+  "@desktopMiniPlayerExpand": {
+    "description": "Mini player button that returns the window to its full size"
+  },
+  "desktopMenuRefresh": "Оновити",
+  "@desktopMenuRefresh": {
+    "description": "View menu item and Keyboard Shortcuts row that reloads the page on screen (Home, Repo, statistics)"
+  },
+  "desktopMenuProjectPage": "Project page",
+  "@desktopMenuProjectPage": {
+    "description": "Help menu item that opens the app's source repository"
+  },
+  "desktopDownloadsShowAll": "Show all",
+  "@desktopDownloadsShowAll": {
+    "description": "Button in the desktop downloads popover that opens the full download queue"
+  },
+  "desktopDownloadsQueued": "Waiting",
+  "@desktopDownloadsQueued": {
+    "description": "Status of a download in the desktop downloads popover that has not started yet"
+  },
+  "desktopDownloadsCancel": "Скасувати завантаження",
+  "@desktopDownloadsCancel": {
+    "description": "Tooltip of the button that cancels one download in the desktop downloads popover"
+  },
+  "desktopScrollBack": "Scroll back",
+  "@desktopScrollBack": {
+    "description": "Tooltip of the desktop button that scrolls a horizontal shelf of albums or artists back"
+  },
+  "desktopScrollForward": "Scroll forward",
+  "@desktopScrollForward": {
+    "description": "Tooltip of the desktop button that scrolls a horizontal shelf of albums or artists forward"
+  },
+  "settingsKeyboardShortcuts": "Keyboard Shortcuts",
+  "@settingsKeyboardShortcuts": {
+    "description": "Desktop Settings page that lists the app's keyboard shortcuts"
+  },
+  "settingsKeyboardShortcutsSubtitle": "Keys for playback, navigation and panels",
+  "@settingsKeyboardShortcutsSubtitle": {
+    "description": "Subtitle of the Keyboard Shortcuts entry in desktop Settings"
+  },
+  "desktopShortcutsNavigation": "Navigation",
+  "@desktopShortcutsNavigation": {
+    "description": "Keyboard Shortcuts section for moving between pages"
+  },
+  "desktopShortcutDismiss": "Close dialog or page",
+  "@desktopShortcutDismiss": {
+    "description": "Keyboard Shortcuts row for Escape, which leaves a text field or closes the top dialog or page"
+  },
+  "desktopShortcutToggleSidebar": "Show or hide sidebar",
+  "@desktopShortcutToggleSidebar": {
+    "description": "Keyboard Shortcuts row for the shortcut that collapses or expands the desktop sidebar"
   }
 }
