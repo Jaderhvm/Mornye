@@ -246,7 +246,7 @@
   "@appearanceStyle": {
     "description": "Appearance section for choosing the app visual style"
   },
-  "@@locale": "es-ES",
+  "@@locale": "es_ES",
   "@@last_modified": "2026-04-28",
   "appName": "Mornye",
   "@appName": {
@@ -6858,7 +6858,7 @@
       }
     }
   },
-  "trackConvertActionLabelLossless": "{formato de origen} → {formato de destino} ({calidad})",
+  "trackConvertActionLabelLossless": "{sourceFormat} → {targetFormat} ({quality})",
   "@trackConvertActionLabelLossless": {
     "description": "Convert button label for lossless conversion with quality cap",
     "placeholders": {
@@ -6873,7 +6873,7 @@
       }
     }
   },
-  "trackConvertActionLabelLossy": "{formato de origen} → {formato de destino} @ {velocidad de bits}",
+  "trackConvertActionLabelLossy": "{sourceFormat} → {targetFormat} @ {bitrate}",
   "@trackConvertActionLabelLossy": {
     "description": "Convert button label for lossy conversion",
     "placeholders": {

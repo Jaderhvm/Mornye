@@ -22,6 +22,8 @@ const List<Locale> filteredSupportedLocales = <Locale>[
   Locale('id'),
   Locale('pt', 'PT'),
   Locale('ja'),
+  Locale('vi'),
+  Locale('zh', 'CN'),
 ];
 
 /// Set of locale codes for quick lookup.
@@ -37,4 +39,6 @@ const Set<String> filteredLocaleCodes = <String>{
   'id',
   'pt_PT',
   'ja',
+  'vi',
+  'zh_CN',
 };

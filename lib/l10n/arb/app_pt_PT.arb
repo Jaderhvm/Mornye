@@ -246,7 +246,7 @@
   "@appearanceStyle": {
     "description": "Appearance section for choosing the app visual style"
   },
-  "@@locale": "pt-PT",
+  "@@locale": "pt_PT",
   "@@last_modified": "2026-04-28",
   "appName": "Mornye",
   "@appName": {
