@@ -90,7 +90,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.zarz.mornye"
+        applicationId = "com.jader.mornye.stream"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         minSdk = flutter.minSdkVersion
         targetSdk = 37

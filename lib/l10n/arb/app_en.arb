@@ -1,4 +1,6 @@
 {
+  "extensionStreamingPlaybackFailed": "Cannot stream this track. Check your connection and the extension session in Settings.",
+  "@extensionStreamingPlaybackFailed": {"description": "Error when a streaming-capable extension cannot start playback"},
   "trackBpm": "BPM",
   "trackMood": "Mood",
   "subsonicAddToLibrary": "Add server to Library",

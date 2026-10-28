@@ -29,7 +29,7 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
     <application
-        android:label="Mornye"
+        android:label="Mornye Stream"
         android:name=".MornyeApplication"
         android:icon="@mipmap/ic_launcher"
         android:allowBackup="false"

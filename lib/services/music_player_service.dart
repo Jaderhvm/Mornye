@@ -974,6 +974,9 @@ class MusicPlayerHandler extends BaseAudioHandler
   }
 
   Future<String?> _resolveSource(PlayableMedia media) async {
+    if (media.source.startsWith('extension-audio:')) {
+      return _dependencies.resolveExtensionSource(media.source);
+    }
     if (media.source.startsWith('network://')) {
       try {
         return await _dependencies.resolveNetworkSource(media.source);
@@ -1597,6 +1600,9 @@ class MusicPlayerHandler extends BaseAudioHandler
   }
 
   Future<void> _loadNetworkMetadata(PlayableMedia media, int generation) async {
+    // Catalog metadata is supplied by the extension. Network storage cannot
+    // probe an opaque extension identity as if it were a remote file URL.
+    if (media.source.startsWith('extension-audio:')) return;
     try {
       final metadata = await _dependencies.readNetworkMetadata(media.source);
       if (!_isCurrentPlayRequest(generation, media)) return;

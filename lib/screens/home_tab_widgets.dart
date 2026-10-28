@@ -358,6 +358,11 @@ class _TrackItemWithStatus extends ConsumerWidget {
   }) async {
     if (isQueued) return;
 
+    if (!isInHistory && !isInLocalLibrary &&
+        await playExtensionIfAvailable(context, ref, track)) {
+      return;
+    }
+
     final settings = ref.read(settingsProvider);
     final allowExistingDownload =
         settings.allowQualityVariants || !settings.deduplicateDownloads;

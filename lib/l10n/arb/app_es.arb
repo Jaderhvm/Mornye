@@ -1,4 +1,5 @@
 {
+  "extensionStreamingPlaybackFailed": "No se pudo reproducir. Revisa la conexión y la sesión del plugin en Ajustes.",
   "@@locale": "es",
   "@@last_modified": "2026-01-16",
   "appName": "Mornye",

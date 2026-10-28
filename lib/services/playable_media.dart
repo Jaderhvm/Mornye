@@ -40,8 +40,12 @@ class PlayableMedia {
   });
 
   bool get isContentUri => source.startsWith('content://');
-  bool get isNetwork =>
-      const {'network', 'http', 'https'}.contains(Uri.tryParse(source)?.scheme);
+  bool get isNetwork => const {
+    'network',
+    'http',
+    'https',
+    'extension-audio',
+  }.contains(Uri.tryParse(source)?.scheme);
 
   Map<String, dynamic> toJson() => {
     'id': id,

@@ -6,13 +6,14 @@ import 'package:mornye/providers/local_library_provider.dart';
 import 'package:mornye/providers/playback_provider.dart';
 import 'package:mornye/utils/file_access.dart';
 import 'package:mornye/widgets/app_snack_bar.dart';
+import 'package:mornye/controllers/extension_playback.dart';
 
 /// Plays [track] from download history or the local library when a matching
 /// file already exists on disk.
 ///
 /// Returns true when playback started (or when an error was surfaced to the
 /// user), so callers can skip enqueueing a download; returns false when no
-/// local copy is available. Stale history entries whose file no longer exists
+/// local copy or streaming-capable extension is available. Stale history entries whose file no longer exists
 /// are pruned as a side effect.
 Future<bool> playLocalIfAvailable(
   BuildContext context,
@@ -75,5 +76,6 @@ Future<bool> playLocalIfAvailable(
     return true;
   }
 
-  return false;
+  if (!context.mounted) return true;
+  return playExtensionIfAvailable(context, ref, track);
 }

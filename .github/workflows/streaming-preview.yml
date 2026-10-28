@@ -1,0 +1,57 @@
+name: Build Mornye Stream preview
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - codex/deezer-streaming
+permissions:
+  contents: read
+jobs:
+  android:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      MORNYE_RUST_ANDROID_ABIS: arm64-v8a
+      MORNYE_DISCORD_SDK: '0'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6
+        with:
+          distribution: temurin
+          java-version: '25'
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2
+        with:
+          channel: stable
+          flutter-version-file: .fvmrc
+          cache: true
+      - name: Prepare toolchains
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libclang-dev ffmpeg
+          (cd rust_backend && rustup show)
+          dart scripts/prepare_flutter_sdk.dart
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "ndk;30.0.16248370" "platforms;android-37.0" "build-tools;37.0.0" "cmake;4.1.2"
+          echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk/30.0.16248370" >> "$GITHUB_ENV"
+      - name: Fetch Flutter dependencies
+        run: flutter pub get
+      - name: Test streaming and existing playback behavior
+        run: flutter test test/extension_streaming_test.dart test/extension_playback_service_test.dart test/music_player_playback_failures_test.dart test/playback_session_restore_test.dart
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            rust_backend/target
+          key: stream-rust-${{ runner.os }}-${{ hashFiles('rust_backend/Cargo.lock', 'rust_backend/rust-toolchain.toml') }}
+      - name: Build ARM64 preview
+        run: bash scripts/build_android.sh --lite
+      - name: Save APK and companion extension
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: mornye-stream-arm64-preview
+          if-no-files-found: error
+          path: |
+            build/app/outputs/flutter-apk/*release.apk
+            fork_extensions/deezer.sflx
+            docs/extension_streaming.md
